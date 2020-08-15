@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TestHand Online</title>
+
+    <!-- Fonts -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <!-- Styles -->
+    <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/steps.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
+    <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />        
+</head>
+<body>
+   <div class="content full-height">
+      <div class="title m-b-md">
+         TestHand Online
+      </div>
+      <div class="container">
+         <div class="stepwizard col-md-offset-3">
+            <div class="stepwizard-row setup-panel">
+               <div class="stepwizard-step">
+                  <a href="#step-1" 
+                     type="button" 
+                     class="btn btn-primary btn-circle"
+                     >
+                  <img 
+                     class="btn-circle-start"
+                     src="./public/upload.png"                      
+                     height="100%" 
+                     >
+                  </a>
+                  <p>Paso 1</p>
+               </div>
+               <div class="stepwizard-step">
+                  <a 
+                     href="#step-2" 
+                     type="button" 
+                     class="btn btn-default btn-circle" 
+                     disabled="disabled"
+                     >
+                  <img 
+                     class="btn-circle-start"
+                     src="./public/cardIcon.jpeg" 
+                     width="20px"
+                     >
+                  </a>
+                  <p>Paso 2</p>
+               </div>
+               <div class="stepwizard-step">
+                  <a 
+                     href="#step-3" 
+                     type="button" 
+                     class="btn btn-default btn-circle" 
+                     disabled="disabled"
+                     >
+                  <img 
+                     class="btn-circle-end"
+                     src="./public/results4.png" 
+                     width="15px"
+                     >
+                  </a>
+                  <p>Paso 3</p>
+               </div>
+            </div>
+         </div>
+         <div 
+            class="row setup-content" 
+            id="step-1"
+            >
+            <h3> Paso 1: sube el archivo .ydk</h3>
+            <form             
+               enctype="multipart/form-data"
+               id="testForm"
+               >               
+               <div align="center" class="row">
+                  <p 
+                     align="center" 5
+                     class="input-column"
+                  >
+                     <input 
+                        id="input"
+                        style="padding-top:20px;padding-left: 5px;"
+                        name="deck" 
+                        type="file"
+                      >                      
+                  </p>
+                  <p><button  
+                     id="pruebita2"
+                     style="margin-top:10px;"
+                     class="btn btn-primary nextBtn btn-lg " 
+                     type="submit" 
+                     >Siguiente Paso</button>
+                  </p>
+               </div>
+            </form>
+         </div>
+         <div 
+            class="row setup-content" 
+            id="step-2"
+            >
+            <h3 id="test3"> Paso 2: Agrega los combos y las cartas del combo</h3>
+            <div class="row">
+               <div class="col-md-11">
+                  <div id="mainDeckDiv" class="#columns big-column">
+                     <!--The main Deck goes here-->
+                  </div>                    
+                    
+                  
+                  <div 
+                     class="col-md-1"            
+                     >
+                      <div 
+                        class="#columns column" style="height: 50px"
+                        >
+                        <div class="row">
+                          <a href="#carousel-example-generic" role="button" data-slide="prev">
+                            <div 
+                              class="#columns column col-md-6"
+                              style="width:150px; height: 50px;left:10px"
+                            >                              
+                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>                                                        
+                            </div>
+                          </a>
+                          <a href="#carousel-example-generic" role="button" data-slide="next">
+                            <div 
+                              class="#columns column col-md-6"
+                              style="width:150px; height: 50px;left:10px"
+                            >                            
+                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>                                
+                              
+                            </div>
+                          </a>
+                        </div>                                                      
+                      </div>
+                      <div 
+                        class="#columns column"
+                        >                      
+                        <div 
+                           id="carousel-example-generic" 
+                           class="carousel slide" 
+                           data-ride="carousel"  
+                           data-interval="false"                                          
+                           >
+                          
+                           <!-- Wrapper for slides -->
+                           <div 
+                              class="carousel-inner" 
+                              role="listbox"
+                              id="comboCarrousel"
+                              >                              
+                              <div 
+                                 class="item active" 
+                                 >
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div 
+                                       class="delete-ajust" 
+                                       align="right"
+                                       >
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                       >                                       
+                                        <div 
+                                          class="item active"> 
+                                        </div>                                                                                  
+                                    </div>
+                                 </div>
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div class="delete-ajust" align="right">
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                    >
+                                       <div class="item active"> 
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div 
+                                       class="delete-ajust" 
+                                       align="right"
+                                       >
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                       >                                       
+                                        <div 
+                                          class="item active"> 
+                                        </div>                                                                                  
+                                    </div>
+                                 </div>                                 
+                              </div>
+                              <div class="item">
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div class="delete-ajust" align="right">
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                       >            
+                                       <div class="item"> 
+                                       </div>               
+                                    </div>
+                                 </div>                                 
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div 
+                                       class="delete-ajust" 
+                                       align="right"
+                                       >
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                       >                                       
+                                        <div 
+                                          class="item active"> 
+                                        </div>                                                                                  
+                                    </div>
+                                 </div>
+                                 <div 
+                                    class="#columns column"
+                                    >
+                                    <div 
+                                       class="delete-ajust" 
+                                       align="right"
+                                       >
+                                       <button                                         
+                                          type="click" 
+                                          class="btn btn-circle-delete  btn-xl"
+                                          >
+                                       <i
+                                          class="trash-icon-ajust glyphicon glyphicon-trash"
+                                          ></i>
+                                       </button>  
+                                    </div>
+                                    <div 
+                                       class="special-col"
+                                       >                                       
+                                        <div 
+                                          class="item active"> 
+                                        </div>                                                                                  
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item">  
+                                <div 
+                                   class="#columns column"
+                                   >
+                                   <div 
+                                      class="delete-ajust" 
+                                      align="right"
+                                      >
+                                      <button                                         
+                                         type="click" 
+                                         class="btn btn-circle-delete  btn-xl"
+                                         >
+                                      <i
+                                         class="trash-icon-ajust glyphicon glyphicon-trash"
+                                         ></i>
+                                      </button>  
+                                   </div>
+                                   <div 
+                                      class="special-col"
+                                      >                                       
+                                       <div 
+                                         class="item active"> 
+                                       </div>                                                                                  
+                                   </div>
+                                </div>
+                                <div 
+                                   class="#columns column"
+                                   >
+                                   <div 
+                                      class="delete-ajust" 
+                                      align="right"
+                                      >
+                                      <button                                         
+                                         type="click" 
+                                         class="btn btn-circle-delete  btn-xl"
+                                         >
+                                      <i
+                                         class="trash-icon-ajust glyphicon glyphicon-trash"
+                                         ></i>
+                                      </button>  
+                                   </div>
+                                   <div 
+                                      class="special-col"
+                                      >                                       
+                                       <div 
+                                         class="item active"> 
+                                       </div>                                                                                  
+                                   </div>
+                                </div>
+                                <div 
+                                   class="#columns column"
+                                   >
+                                   <div 
+                                      class="delete-ajust" 
+                                      align="right"
+                                      >
+                                      <button                                         
+                                         type="click" 
+                                         class="btn btn-circle-delete  btn-xl"
+                                         >
+                                      <i
+                                         class="trash-icon-ajust glyphicon glyphicon-trash"
+                                         ></i>
+                                      </button>  
+                                   </div>
+                                   <div 
+                                      class="special-col"
+                                      >                                       
+                                       <div 
+                                         class="item active"> 
+                                       </div>                                                                                  
+                                   </div>
+                                </div>                                                            
+                              </div>
+                           </div>
+                           <!-- Controls -->                           
+                           <div  id="addCombo" class="special-col" align="center" style="padding-top: 10px"> 
+                              <button                                                                
+                                 type="submit" 
+                                 class="btn btn-success btn-circle btn-xl"
+                                 >
+                              <i 
+                                 class="glyphicon glyphicon-plus"
+                                 ></i>
+                              </button>  
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="extraDeckDiv" class="#columns long-column">
+                    <!--the extra deck goes here-->  
+                  </div>                  
+               </div>
+            </div>
+            <hr>
+            <hr>
+            <div align="center" class="container-fluid">
+              <div class="row">
+                <label>Indique el numero de veces que desea que se ejecute la prueba
+                  <input  id="iterations" type="number" min = "1" required>
+                </label>
+              </div>
+               <button  
+                  id="pruebita"
+                  style="margin-top:10px;"
+                  class="go-up btn btn-primary nextBtnSpecial btn-lg " 
+                  type="button" 
+                  >Siguiente Paso</button>
+            </div>
+         </div>
+         <br>
+         <br>
+         <div 
+            class="row setup-content" 
+            id="step-3"
+            >
+            <h3> Paso 3: Resultado de las pruebas</h3>
+            <div class="result-column">
+               <div 
+                  class="table-responsive"
+                  >
+                  <table 
+                     class="table table-bordred table-striped"
+                     >
+                     <tbody id="mytable">
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <hr>
+         <div 
+            class="row"
+            >
+            <div 
+               class="col-lg-12 col-sm-12 col-xs-12"
+               >
+               <div 
+                  class="links"
+                  >
+                  <a 
+                     href="https://laravel.com/docs"
+                     >Angel Sucasas
+                  </a>
+                  <a 
+                     href="https://github.com/laravel/laravel"
+                     >GitHub
+                  </a>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <hr>
+      </div>
+   </div>
+   </div>
+</body>
+<script 
+src="./public/js/Card.js"
+></script>
+<script 
+src="./public/js/steps.js"
+></script>
+<script 
+src="./public/js/dragAndDrop.js"
+></script>
+<script 
+src="./public/js/dinamic_boxes.js"
+></script>
+<script 
+src="./public/js/cards_API.js"
+></script>
+<script 
+src="./public/js/class_manager.js"
+></script>
+</html>

@@ -1,0 +1,147 @@
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.btn-circle-delete {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;    
+    border-radius: 15px;
+    background-color: red;    
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    /*padding: 10px 16px;*/
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 30px;
+}
+
+.btn-circle-start{
+
+    text-align: center;
+    position: relative;
+    top: -3px;
+
+}
+
+.btn-circle-mid{
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    top:-13px;
+    right:2px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50px;    
+}
+
+.btn-circle-end{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    top:-10px;
+    font-size: 12px;
+    line-height: 1.428571429;    
+}
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+.delete-card{
+    /*float: right;*/
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.delete-card:hover {
+    /*float: right;*/
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.delete-ajust{
+    padding-right:10px;
+    padding-top:2px;
+}
+
+.trash-icon-ajust{
+    margin-left: -8px;
+    top:-3px;
+}
