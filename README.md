@@ -1,4 +1,4 @@
-# TestHandOnline ![npm](https://img.shields.io/badge/HTML-v.5-reed)![npm](https://img.shields.io/badge/CSS-v-purple) ![npm](https://img.shields.io/badge/JS-v-orange)![npm](https://img.shields.io/badge/Bootstrap-v.3.3-purple)
+# TestHandOnline ![npm](https://img.shields.io/badge/HTML-v.5-reed) ![npm](https://img.shields.io/badge/CSS-v-purple) ![npm](https://img.shields.io/badge/JS-v-orange) ![npm](https://img.shields.io/badge/Bootstrap-v.3.3-purple)
 An online aplication to test hands  of a Yu-Gi-Oh! deck to see the consistency of combos and the viability of it.
 
 
