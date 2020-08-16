@@ -17,14 +17,14 @@ then just open the welcome.html file, and you are ready to go.
 
 there are 3 steps to get the results.
 
-### step 1: upload the .ydk files
+## step 1: upload the .ydk files
 
 ### What is a .YDK file?
 
 its a file generated only by : Dueling Book, dueling Nexus and YgoPro. It contains all the info of your cards in the main, side and extra deck. 
 it is use here to make more easy the process of getting all the information of your cards.
 
-### step 2: select the cards that take part of the combo you want to register.
+## step 2: select the cards that take part of the combo you want to register.
 
 In this step, your main deck and extra deck will be show, you can drag the cards that you want to the boxes in you right, those cards will be register as a "combo",
 that means that in every hand that the pages generates to test the consistency of that combo, it is going to search that specific combination of card in that hand.
@@ -43,7 +43,7 @@ then what? you need to indicate how many hands do you want to test here:
 
 and then you just click the blue button.
 
-### Step 3: results
+## Step 3: results
 
 ![image](https://user-images.githubusercontent.com/44983658/90336069-595cae00-dfa7-11ea-89a9-dcb6dcdfb7d9.png)
 
@@ -60,3 +60,7 @@ https://testhandonline.000webhostapp.com/
 "Al principio hice la pagina en laravel, pero el espacio que proporcionaba el servidor era muy limitado, 
 y la carpeta de imagenes de las cartas + la carpeta de node_modules ocupaban mucho espacio y no iban a permitir desplegar la pagina
 Entoces, tuve que pasar toda la logica a JS..."
+
+## MIT © 
+
+[Ángel Sucasas](mailto:aasucasas.17@est.ucab.edu.ve)
