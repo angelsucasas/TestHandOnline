@@ -45,7 +45,7 @@ and then you just click the blue button.
 
 ### Step 3: results
 
-![image](https://user-images.githubusercontent.com/44983658/90335724-f407bd80-dfa4-11ea-9cf5-1af7a3fb169b.png)
+![image](https://user-images.githubusercontent.com/44983658/90336069-595cae00-dfa7-11ea-89a9-dcb6dcdfb7d9.png)
 
 and there you go, you can go back in steps and add cards to the combo , or more combos.
 
