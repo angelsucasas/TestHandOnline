@@ -31,7 +31,7 @@ that means that in every hand that the pages generates to test the consistency o
 
 so lets say i have this ciberse deck:
 
-![image](https://github.com/angelsucasas.png?size=50) ![image](https://user-images.githubusercontent.com/44983658/90335524-96bf3c80-dfa3-11ea-9f67-b7053d585cdf.png)
+![image](https://user-images.githubusercontent.com/44983658/90335524-96bf3c80-dfa3-11ea-9f67-b7053d585cdf.png)
 
 if i wanted to see how many times i started with this particular card, i would just drag it and drop it on the box on the right, and it would look like this:
 
@@ -63,4 +63,4 @@ Entoces, tuve que pasar toda la logica a JS..."
 
 ## MIT © 
 
-[Ángel Sucasas](mailto:aasucasas.17@est.ucab.edu.ve)
+![image](https://github.com/angelsucasas.png?size=50)  [Ángel Sucasas](mailto:aasucasas.17@est.ucab.edu.ve)
