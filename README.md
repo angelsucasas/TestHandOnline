@@ -4,7 +4,7 @@ An online aplication to test hands  of a Yu-Gi-Oh! deck to see the consistency o
 
 ## How to test it?
 
-JUst clone the repository with 
+If you want to run it locally ,just clone the repository with 
 
 ```bash
 $ git clone  
