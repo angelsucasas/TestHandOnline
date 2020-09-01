@@ -1,11 +1,16 @@
+var minHeights= ['first-step', 'second-step','third-step'];
+var heighControl = document.getElementById('heighControl');
+var heightsControl = 0; 
+
 $(document).ready(function () {
     var navListItems = $('div.setup-panel div a'),
         allWells = $('.setup-content'),
         allNextBtn = $('.nextBtn');        
 
     allWells.hide();
-
+ 
     navListItems.click(function (e) {
+
         e.preventDefault();
         var $target = $($(this).attr('href')),
             $item = $(this);
@@ -19,7 +24,7 @@ $(document).ready(function () {
         }
     });
 
-    allNextBtn.click(function(){
+    allNextBtn.click(function(){        
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),

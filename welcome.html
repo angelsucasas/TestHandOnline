@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TestHand Online</title>
+  <title>TestHand Online</title>
 
-    <!-- Fonts -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- Fonts -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!---gsap-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 
-    <!------ Include the above in your HEAD tag ---------->
+  <!-- scrollMagic-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
-    <!-- Styles -->
-    <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
-    <link href="./public/css/steps.css" rel="stylesheet" type="text/css" />
-    <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
-    <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
-    <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />        
+
+  <!--bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!------ Include the above in your HEAD tag ---------->
+
+  <!-- Styles -->
+  <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
+  <link href="./public/css/steps.css" rel="stylesheet" type="text/css" />
+  <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
+  <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
+  <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />       
+  <link href="./public/css/heights.css" rel="stylesheet" type="text/css" />        
 </head>
-<body>
-   <div class="content full-height">
-      <div class="title m-b-md">
-         TestHand Online
+<body >
+   <div 
+      class="content full-height second-step" 
+      id="heighControl"
+    >
+    <div class="title m-b-md"style="color:white;position: relative;" >        
+          TestHand Online            
       </div>
-      <div class="container">
+      
+      <div class="container" style="position: relative;">
          <div class="stepwizard col-md-offset-3">
             <div class="stepwizard-row setup-panel">
                <div class="stepwizard-step">
@@ -42,14 +60,14 @@
                      height="100%" 
                      >
                   </a>
-                  <p>Paso 1</p>
+                  <p style="color:white">Paso 1</p>
                </div>
                <div class="stepwizard-step">
                   <a 
                      href="#step-2" 
                      type="button" 
                      class="btn btn-default btn-circle" 
-                     disabled="disabled"
+                     disabled="disabled"                     
                      >
                   <img 
                      class="btn-circle-start"
@@ -57,7 +75,7 @@
                      width="20px"
                      >
                   </a>
-                  <p>Paso 2</p>
+                  <p style="color:white">Paso 2</p>
                </div>
                <div class="stepwizard-step">
                   <a 
@@ -72,46 +90,82 @@
                      width="15px"
                      >
                   </a>
-                  <p>Paso 3</p>
+                  <p style="color:white">Paso 3</p>
                </div>
             </div>
          </div>
          <div 
             class="row setup-content" 
-            id="step-1"
+            id="step-1"            
             >
-            <h3> Paso 1: sube el archivo .ydk</h3>
-            <form             
-               enctype="multipart/form-data"
-               id="testForm"
-               >               
-               <div align="center" class="row">
-                  <p 
-                     align="center" 5
-                     class="input-column"
-                  >
-                     <input 
-                        id="input"
-                        style="padding-top:20px;padding-left: 5px;"
-                        name="deck" 
-                        type="file"
-                      >                      
-                  </p>
-                  <p><button  
-                     id="pruebita2"
-                     style="margin-top:10px;"
-                     class="btn btn-primary nextBtn btn-lg " 
-                     type="submit" 
-                     >Siguiente Paso</button>
-                  </p>
-               </div>
-            </form>
+            <div class="col-md-12 animate__animated animate__fadeInLeft" style="height: 55vh">
+              <h3 style="color:white"> Paso 1: sube el archivo .ydk</h3>
+              <form             
+                 enctype="multipart/form-data"
+                 id="testForm"
+                 >               
+                 <div align="center" class="row">
+                    <p 
+                       align="center" 5
+                       class="input-column"
+                    >
+                       <input 
+                          id="input"
+                          style="padding-top:20px;padding-left: 5px;"
+                          name="deck" 
+                          type="file"
+                        >                      
+                    </p>
+                    <p><button  
+                       id="pruebita2"
+                       style="margin-top:10px;"
+                       class="btn btn-primary nextBtn btn-lg " 
+                       type="submit" 
+                       >Siguiente Paso</button>
+                    </p>
+                 </div>
+              </form>
+            </div>           
+            <div class="col-md-12">           
+              <hr>
+              <hr>
+              <div class="row">
+                <div class="col-md-6" id="RconnectionsLogo">
+                  <img src="./public/r-connections.png" style="width: 100%; height: 100%;" >
+                </div>
+                <div class="col-md-6" style="color:white; padding-top:15%;">
+                  <h2>R Connections te trae un video tutorial</h2>
+                  <h2>¡aprende a usar testhand online gracias</h2>
+                  <h2>al tutorial disponible en el canal de</h2>
+                  <h2>R connections!</h2>                  
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6" style="color:white; padding-top:15%;">
+                    <h2>¿Quieres compartir tu deck profile con </h2>
+                    <h2>nosotros?</h2>
+                    <h2>manda un video con tu deck profile</h2>
+                    <h2>a x.com y demuestrale a la </h2>
+                    <h2>comunidad tus habilidades</h2>
+                    <h2>para armar mazos</h2>
+                  </div>
+                  <div class="col-md-6" id="otherImg" style="padding-top:15%;">
+                    <img src="./public/raul3.png">
+                  </div>
+                </div>
+              </div>
+            </div>
          </div>
          <div 
-            class="row setup-content" 
-            id="step-2"
+            class="row setup-content animate__animated animate__fadeInLeft" 
+            id="step-2"            
             >
-            <h3 id="test3"> Paso 2: Agrega los combos y las cartas del combo</h3>
+            <h3 id="test3" style="color:white"> Paso 2: Agrega los combos y las cartas del combo</h3>
             <div class="row">
                <div class="col-md-11">
                   <div id="mainDeckDiv" class="#columns big-column">
@@ -171,6 +225,7 @@
                                        class="delete-ajust" 
                                        align="right"
                                        >
+                                       combo 1
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -184,14 +239,15 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"> 
+                                          class="item active"
+                                          id="comboCards"> 
                                         </div>                                                                                  
                                     </div>
                                  </div>
                                  <div 
                                     class="#columns column"
                                     >
-                                    <div class="delete-ajust" align="right">
+                                    <div class="delete-ajust" align="right">combo 2
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -204,8 +260,10 @@
                                     <div 
                                        class="special-col"
                                     >
-                                       <div class="item active"> 
-                                       </div>
+                                      <div 
+                                        class="item active"
+                                        id="comboCards"> 
+                                      </div>
                                     </div>
                                  </div>
                                  <div 
@@ -214,7 +272,7 @@
                                     <div 
                                        class="delete-ajust" 
                                        align="right"
-                                       >
+                                       >combo 3
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -228,7 +286,9 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"> 
+                                          class="item active"
+                                          id="comboCards"
+                                        > 
                                         </div>                                                                                  
                                     </div>
                                  </div>                                 
@@ -237,7 +297,7 @@
                                  <div 
                                     class="#columns column"
                                     >
-                                    <div class="delete-ajust" align="right">
+                                    <div class="delete-ajust" align="right">combo 4
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -250,8 +310,11 @@
                                     <div 
                                        class="special-col"
                                        >            
-                                       <div class="item"> 
-                                       </div>               
+                                        <div 
+                                          class="item"
+                                          id="comboCards"
+                                        > 
+                                        </div>               
                                     </div>
                                  </div>                                 
                                  <div 
@@ -260,7 +323,7 @@
                                     <div 
                                        class="delete-ajust" 
                                        align="right"
-                                       >
+                                       >combo 5
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -274,7 +337,9 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"> 
+                                          class="item active"
+                                          id="comboCards"
+                                        > 
                                         </div>                                                                                  
                                     </div>
                                  </div>
@@ -284,7 +349,7 @@
                                     <div 
                                        class="delete-ajust" 
                                        align="right"
-                                       >
+                                       > combo 6
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -298,19 +363,24 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"> 
+                                          class="item active"
+                                          id="comboCards"
+                                        > 
                                         </div>                                                                                  
                                     </div>
                                  </div>
                               </div>
-                              <div class="item">  
+                              <div 
+                                class="item"                                
+                              >  
                                 <div 
                                    class="#columns column"
+                                   style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"
                                    >
                                    <div 
                                       class="delete-ajust" 
                                       align="right"
-                                      >
+                                      >brick 1
                                       <button                                         
                                          type="click" 
                                          class="btn btn-circle-delete  btn-xl"
@@ -323,18 +393,48 @@
                                    <div 
                                       class="special-col"
                                       >                                       
-                                       <div 
-                                         class="item active"> 
+                                        <div 
+                                         class="item active"
+                                         id="brick"
+                                        > 
+                                       </div>                                                                                  
+                                   </div>
+                                </div>
+                                <div 
+                                  class="#columns column"  
+                                  style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"   
+                                >
+                                   <div 
+                                      class="delete-ajust" 
+                                      align="right"
+                                      > brick 2
+                                      <button                                         
+                                         type="click" 
+                                         class="btn btn-circle-delete  btn-xl"
+                                         >
+                                      <i
+                                         class="trash-icon-ajust glyphicon glyphicon-trash"
+                                         ></i>
+                                      </button>  
+                                   </div>
+                                   <div 
+                                      class="special-col"
+                                      >                                       
+                                        <div 
+                                          class="item active"
+                                          id="brick"
+                                        > 
                                        </div>                                                                                  
                                    </div>
                                 </div>
                                 <div 
                                    class="#columns column"
-                                   >
+                                   style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"  
+                                >
                                    <div 
                                       class="delete-ajust" 
                                       align="right"
-                                      >
+                                      >brick 3
                                       <button                                         
                                          type="click" 
                                          class="btn btn-circle-delete  btn-xl"
@@ -347,32 +447,10 @@
                                    <div 
                                       class="special-col"
                                       >                                       
-                                       <div 
-                                         class="item active"> 
-                                       </div>                                                                                  
-                                   </div>
-                                </div>
-                                <div 
-                                   class="#columns column"
-                                   >
-                                   <div 
-                                      class="delete-ajust" 
-                                      align="right"
-                                      >
-                                      <button                                         
-                                         type="click" 
-                                         class="btn btn-circle-delete  btn-xl"
-                                         >
-                                      <i
-                                         class="trash-icon-ajust glyphicon glyphicon-trash"
-                                         ></i>
-                                      </button>  
-                                   </div>
-                                   <div 
-                                      class="special-col"
-                                      >                                       
-                                       <div 
-                                         class="item active"> 
+                                        <div 
+                                          class="item active"
+                                          id="brick"
+                                        > 
                                        </div>                                                                                  
                                    </div>
                                 </div>                                                            
@@ -401,9 +479,8 @@
             <hr>
             <div align="center" class="container-fluid">
               <div class="row">
-                <label>Indique el numero de veces que desea que se ejecute la prueba
-                  <input  id="iterations" type="number" min = "1" required>
-                </label>
+                <label style="color:white">Indique el numero de veces que desea que se ejecute la prueba</label>
+                <input  id="iterations" type="number" min = "1" required>                
               </div>
                <button  
                   id="pruebita"
@@ -416,22 +493,62 @@
          <br>
          <br>
          <div 
-            class="row setup-content" 
+            class="row setup-content animate__animated animate__fadeInLeft" 
             id="step-3"
             >
-            <h3> Paso 3: Resultado de las pruebas</h3>
-            <div class="result-column">
-               <div 
-                  class="table-responsive"
-                  >
-                  <table 
-                     class="table table-bordred table-striped"
+            <h3 style="color:white"> Paso 3: Resultado de las pruebas</h3>
+            <div class="row"> 
+                <div class="col-md-9">  
+                    <div 
+                       class="table-responsive result-column"
+                       >
+                       <table 
+                          class="table table-bordred table-striped"
+                          >
+                          <tbody id="mytable">
+                          </tbody>
+                       </table>
+                    </div> 
+                </div>
+                <div class="col-md-3">  
+                  <div 
+                     class="table-responsive result-column"
                      >
-                     <tbody id="mytable">
-                     </tbody>
-                  </table>
-               </div>
-            </div>
+                     <table 
+                        class="table table-bordred table-striped"
+                        >
+                        <tbody id="rawAnalisisResultImage">
+                        </tbody>
+                     </table>
+                  </div> 
+                </div>
+                <div style="padding-top: 10px;"class="col-md-9">  
+                    <div 
+                       class="table-responsive result-column"
+                       >
+                       <table 
+                          class="table table-bordred table-striped"
+                          >
+                          <tbody id="hipergeometricDistributionResult">
+                          </tbody>
+                       </table>
+                    </div> 
+                </div>
+                <div style="padding-top: 10px;" class="col-md-3">  
+                  <div 
+                     class="table-responsive result-column"
+                     >
+                     <table 
+                        class="table table-bordred table-striped"
+                        >
+                        <tbody id="hipergeometricDistributionImage">
+                        </tbody>
+                     </table>
+                  </div> 
+                </div>
+            </div>  
+                          
+
          </div>
          <hr>
          <hr>
@@ -445,13 +562,19 @@
                   class="links"
                   >
                   <a 
-                     href="https://laravel.com/docs"
+                     href="https://github.com/angelsucasas"
+                     style="color:white"
                      >Angel Sucasas
                   </a>
                   <a 
-                     href="https://github.com/laravel/laravel"
-                     >GitHub
+                     href="https://github.com/angelsucasas"
+
+                     ><span class="glyphicon glyphicon-envelope" style="color:white;font-size:20px"></span>
                   </a>
+                  <a 
+                     href="https://www.linkedin.com/in/%C3%A1ngel-alejandro-sucasas-goncalves-1829871b0/"
+                     ><i class="fa fa-linkedin-square" style="color:white;font-size:24px"></i>
+                  </a>                  
                </div>
             </div>
          </div>
@@ -462,21 +585,33 @@
    </div>
 </body>
 <script 
-src="./public/js/Card.js"
+  src="./public/js/Card.js"
 ></script>
 <script 
-src="./public/js/steps.js"
+  src="./public/js/steps.js"
 ></script>
 <script 
-src="./public/js/dragAndDrop.js"
+  src="./public/js/dragAndDrop.js"
 ></script>
 <script 
-src="./public/js/dinamic_boxes.js"
+  src="./public/js/dinamic-boxes.js"
 ></script>
 <script 
-src="./public/js/cards_API.js"
+  src="./public/js/cards-API.js"
 ></script>
 <script 
-src="./public/js/class_manager.js"
+  src="./public/js/class-manager.js"
+></script>
+<script 
+  src="./public/js/file-management.js"
+></script>
+<script 
+  src="./public/js/array-functions.js"
+></script>
+<script 
+  src="./public/js/analitics-functions.js"
+></script>
+<script 
+  src="./public/js/scrollMagic.js"
 ></script>
 </html>

@@ -6,8 +6,7 @@ function handleDragStart(e) {
   // Target (this) element is the source node.
   e.target.style.opacity = '0.4';
 
-  dragSrcEl = e.target;
-  console.log(dragSrcEl)
+  dragSrcEl = e.target;  
   e.dataTransfer.effectAllowed = 'move';
   e.dataTransfer.setData('text/html', this.innerHTML);
 }
@@ -53,8 +52,7 @@ function handleDrop(e) {
     innerImg.id = dragSrcEl.id; 
     addClass(innerImg,"#card card");
     innerImg.setAttribute('draggable', true);         
-    let active = e.target.querySelectorAll('.item');   
-    console.log(e.target)  
+    let active = e.target.querySelectorAll('.item');       
     active[0] .appendChild(innerImg)   
     
     dragSrcEl.innerHTML = dragSrcEl.innerHTML;   
