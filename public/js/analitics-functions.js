@@ -1,6 +1,9 @@
 var comboArrayRegister = [];
+var brickArrayRegister = [];
 var numberOfCombosByHand = [];
 var hipergeometricTable = document.getElementById('hipergeometricDistributionResult');
+var combosImagesIndividualResult = document.getElementById('combosImagesIndividualResult');
+var brickImagesIndividualResult = document.getElementById('brickImagesIndividualResult');
 
 function hiperbolicDistributionAnalisis(array){
   let hiperbolicArrayValues = []  
@@ -31,12 +34,11 @@ function hiperbolicDistributionAnalisis(array){
   }
 
 
-  
+  hipergeometricTable.innerHTML=""
   addToTheTable(`Resultados basados en una distribucion hiperbolica`,'',hipergeometricTable) 
 
   let hiperbolicValue
-  let countValues = 1; 
-  console.log(hiperbolicArrayValues);
+  let countValues = 1;   
   for(hiperbolicValue of hiperbolicArrayValues){
     addToTheTable(`Porcentaje de exito del combo ${countValues}`,`${hiperbolicValue}%`,hipergeometricTable)    
     countValues++;    
@@ -44,7 +46,8 @@ function hiperbolicDistributionAnalisis(array){
 }
 
 async function rawAnalisis(array , bricks, numberOfIterations){
-
+  console.log(array)
+  console.log(bricks)
   //aqui va el analisis del deck 
   //ok ya tengo el deck y los combos, ahora falta sacar las manos y comparar
   let deadHands = 0;
@@ -55,13 +58,20 @@ async function rawAnalisis(array , bricks, numberOfIterations){
   numIterations = numberOfIterations;  
 
   while(counterInitialization){
-    comboArrayRegister[counterInitialization-1] = 0;
+    comboArrayRegister[counterInitialization-1] = 0;    
+    counterInitialization-=1;
+  }
+
+  counterInitialization = bricks.length
+
+   while(counterInitialization){    
+    brickArrayRegister[counterInitialization-1] = 0;
     counterInitialization-=1;
   }
   //para contar cuantos combos hay por mano
 
   let numberOfHands = numberOfIterations;
-
+  let originalNumberOfIterations = numberOfIterations;
   while(numberOfHands){
     numberOfCombosByHand[numberOfHands-1] = 0;
     numberOfHands-=1;
@@ -75,18 +85,15 @@ async function rawAnalisis(array , bricks, numberOfIterations){
   let thereIsAComboInThatHand = 0;
   let thereIsABrickInThatHand = 0;
 
-  
-  //trata de dividir las iteraciones entre 4 y ejecutalas de manera asincrona
-  //pero metelas en una funciona para esperar el resultado
+    
 
   while(numberOfIterations){
 
     mano = [];
-    cloneDeck = deck;
-
+    cloneDeck = deck;    
     mano = draw5randomCardsFromDeck(cloneDeck);      
-    [comboArrayRegister,numberOfCombosByHand,thereIsAComboInThatHand] = checkIfThisComboIsInThisHand(array, mano, numberOfIterations);
-    [[],[],thereIsABrickInThatHand] = checkIfThisComboIsInThisHand(bricks, mano, numberOfIterations);
+    [comboArrayRegister,numberOfCombosByHand,thereIsAComboInThatHand] = checkIfThisComboIsInThisHand(array, mano, numberOfIterations,comboArrayRegister);
+    [brickArrayRegister,[],thereIsABrickInThatHand] = checkIfThisComboIsInThisHand(bricks, mano, numberOfIterations, brickArrayRegister);
 
 
     brickHands+=1*(!thereIsABrickInThatHand);
@@ -95,18 +102,40 @@ async function rawAnalisis(array , bricks, numberOfIterations){
     
     numberOfIterations-=1;
   }
-          
-     
+  console.log(comboArrayRegister)         
+  console.log(brickArrayRegister)
   $("#p").html(deadHands);
 
-  addToTheTable(`Porcentaje de manos con combos`,(100-((100*deadHands)/numIterations)), table);
-  addToTheTable(`Porcentaje de manos muertas`,((100*deadHands)/numIterations), table);
-  addToTheTable(`Porcentaje de manos con bricks`,(100-((100*brickHands)/numIterations)), table);
- 
+  addToTheTable(`Porcentaje de manos con 1 combo como minimo`,(100-((100*deadHands)/numIterations))+'%', table);
+  addToTheTable(`Porcentaje de manos muertas`,((100*deadHands)/numIterations)+'%', table);
+  addToTheTable(`Porcentaje de manos con bricks`,(100-((100*brickHands)/numIterations))+'%', table);
+  
+  brickImagesIndividualResult.innerHTML="";
+  combosImagesIndividualResult.innerHTML="";
+  if(array.length){
+    let positionOfIndividualCombo;
+
+    for(numberOfIndividualComboOcurrencies of comboArrayRegister){
+      console.log("entro en el combo")
+      positionOfIndividualCombo = comboArrayRegister.indexOf(numberOfIndividualComboOcurrencies);
+      addCardImageToTheTable(`Combo ${positionOfIndividualCombo+1}`,array[positionOfIndividualCombo],'Porcentaje: '+[(numberOfIndividualComboOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualComboOcurrencies+'/'+originalNumberOfIterations]+']', combosImagesIndividualResult)
+    }
+  }
+  
+  
+  if(bricks.length){
+    let positionOfIndividualBrick
+
+    for(numberOfIndividualBrickOcurrencies of brickArrayRegister){
+      console.log("entro en el brick")
+      positionOfIndividualBrick = brickArrayRegister.indexOf(numberOfIndividualBrickOcurrencies);
+      addCardImageToTheTable(`Brick ${positionOfIndividualBrick+1}`,bricks[positionOfIndividualBrick],'Porcentaje: '+[(numberOfIndividualBrickOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualBrickOcurrencies+'/'+originalNumberOfIterations]+']', brickImagesIndividualResult) 
+    }
+  } 
 }
 
 
-function checkIfThisComboIsInThisHand(array, mano, numberOfIterations){
+function checkIfThisComboIsInThisHand(array, mano, numberOfIterations, arrayRegister){
   //ahora compara si hay algun combo en esa mano
   let thereIsAComboInThatHand = 0;
   let individualCombo;  
@@ -145,13 +174,14 @@ function checkIfThisComboIsInThisHand(array, mano, numberOfIterations){
 
       //aumentamos un array de contadores, en la misma posicion donde estaba almacenado el combo
       //al final cada posicion deberia tener la cantidad de veces que aparecio cada combo
-      comboArrayRegister[array.indexOf(individualCombo)]+=1*(cardsCoincidenceWithHand==cardsInCombo);
+
+      arrayRegister[array.indexOf(individualCombo)]+=1*(cardsCoincidenceWithHand==cardsInCombo);
       numberOfCombosByHand[numberOfIterations-1]+=1*(cardsCoincidenceWithHand==cardsInCombo);
       thereIsAComboInThatHand+=1*(cardsCoincidenceWithHand==cardsInCombo);                 
     }
   }
 
-  return [comboArrayRegister,numberOfCombosByHand,thereIsAComboInThatHand]
+  return [arrayRegister,numberOfCombosByHand,thereIsAComboInThatHand]
 }
 
 
@@ -162,7 +192,26 @@ function addToTheTable(columnTextLeft,columnTextRight, table){
 
   td.innerText = columnTextLeft;
   tr.appendChild(td);
-  td2.innerText = `${columnTextRight}%`;  
+  td2.innerText = `${columnTextRight}`;  
+  tr.appendChild(td2);            
+  table.appendChild(tr);
+}
+
+function addCardImageToTheTable(columnTextLeft,imgSrcArray,columnTextRight, table){
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');   
+  let td2 = document.createElement('td');
+  td.innerText = columnTextLeft;
+  tr.appendChild(td);
+
+  for( imgSrc of imgSrcArray){
+    let newImage = document.createElement('img');
+    newImage.src='./public/pics/'+imgSrc+'.jpg';
+    addClass(newImage,'#card card')
+    tr.appendChild(newImage);
+  }
+  
+  td2.innerText = `${columnTextRight}`;  
   tr.appendChild(td2);            
   table.appendChild(tr);
 }

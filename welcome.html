@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="shortcut icon" href="./public/testhandLogoFinal.png" />
   <title>TestHand Online</title>
 
   <!-- Fonts -->
@@ -41,13 +41,17 @@
    <div 
       class="content full-height second-step" 
       id="heighControl"
-    >
-    <div class="title m-b-md"style="color:white;position: relative;" >        
-          TestHand Online            
-      </div>
-      
-      <div class="container" style="position: relative;">
-         <div class="stepwizard col-md-offset-3">
+    >           
+      <div id="mainContainer" class="container">
+      <div  id="logo" class="row logoPadding animate__animated animate__flip">        
+          <img src="./public/testhandLogoFinal.png" class="logoSize">
+      </div>  
+      <div id="fisrtRow" class="row">
+        <div class="col-md-2"> 
+          
+        </div>
+        <div class="col-md10">  
+          <div class="stepwizard col-md-offset-3">
             <div class="stepwizard-row setup-panel">
                <div class="stepwizard-step">
                   <a href="#step-1" 
@@ -93,12 +97,14 @@
                   <p style="color:white">Paso 3</p>
                </div>
             </div>
-         </div>
+          </div>        
+        </div>
+      </div>               
          <div 
             class="row setup-content" 
             id="step-1"            
             >
-            <div class="col-md-12 animate__animated animate__fadeInLeft" style="height: 55vh">
+            <div class="col-md-12 animate__animated animate__fadeInLeft" style="height: 45vh; min-height: 200px;">
               <h3 style="color:white"> Paso 1: sube el archivo .ydk</h3>
               <form             
                  enctype="multipart/form-data"
@@ -125,79 +131,147 @@
                     </p>
                  </div>
               </form>
-            </div>           
-            <div class="col-md-12">           
-              <hr>
-              <hr>
-              <div class="row">
-                <div class="col-md-6" id="RconnectionsLogo">
-                  <img src="./public/r-connections.png" style="width: 100%; height: 100%;" >
-                </div>
-                <div class="col-md-6" style="color:white; padding-top:15%;">
-                  <h2>R Connections te trae un video tutorial</h2>
-                  <h2>¡aprende a usar testhand online gracias</h2>
-                  <h2>al tutorial disponible en el canal de</h2>
-                  <h2>R connections!</h2>                  
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <hr>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6" style="color:white; padding-top:15%;">
-                    <h2>¿Quieres compartir tu deck profile con </h2>
-                    <h2>nosotros?</h2>
-                    <h2>manda un video con tu deck profile</h2>
-                    <h2>a x.com y demuestrale a la </h2>
-                    <h2>comunidad tus habilidades</h2>
-                    <h2>para armar mazos</h2>
+            </div>  
+            <hr>
+            <hr>
+            <div 
+               class="row"
+               >
+               <div 
+                  class="col-lg-12 col-sm-12 col-xs-12"
+                  >
+                  <div 
+                     class="links"
+                     > 
+                     <a 
+                        href="https://github.com/angelsucasas"
+                        style="color:white"
+                        >Video Tutorial
+                     </a>                                            
+                      <i class="vr"></i>
+                      <a 
+                        href="https://github.com/angelsucasas"
+                        style="color:white"
+                        >Angel Sucasas
+                      </a>
+                      <a 
+                        href="https://github.com/angelsucasas"
+
+                        ><span class="glyphicon glyphicon-envelope" style="color:white;font-size:20px"></span>
+                      </a>
+                     <a 
+                        href="https://www.linkedin.com/in/%C3%A1ngel-alejandro-sucasas-goncalves-1829871b0/"
+                        ><i class="fa fa-linkedin-square" style="color:white;font-size:24px"></i>
+                     </a>  
+                     <i class="vr"></i>
+                     <a 
+                        href="https://github.com/angelsucasas"
+                        style="color:white"
+                        ><img src="./public/r-connections.png" style="width: 50px;" >
+                      </a>                
                   </div>
-                  <div class="col-md-6" id="otherImg" style="padding-top:15%;">
-                    <img src="./public/raul3.png">
-                  </div>
-                </div>
-              </div>
+               </div>
             </div>
          </div>
          <div 
             class="row setup-content animate__animated animate__fadeInLeft" 
-            id="step-2"            
+            id="step-2"                       
             >
+            <button 
+              class="sideElementToScreen"
+              style="top:55px;"
+              id="changeToMainDeck"              
+            >
+                <p 
+                  class="verticalWrite"                  
+                >Main</p>
+              </button>
+            <button 
+              class="sideElementToScreen"
+              style="top:155px;"
+              id="changeToExtraDeck" 
+            >
+                <p 
+                  class="verticalWrite"                    
+                >Extra</p>
+            </button>
+            <button 
+              class="sideElementToScreen"
+              style="top:255px;"
+              id="changeToSideDeck"
+            >
+              <p 
+                class="verticalWrite"                     
+              >Side</p>
+            </button>
             <h3 id="test3" style="color:white"> Paso 2: Agrega los combos y las cartas del combo</h3>
             <div class="row">
-               <div class="col-md-11">
-                  <div id="mainDeckDiv" class="#columns big-column">
+               <div class="col-md-7">
+                  <div id="mainDeckDiv" class="big-column">
                      <!--The main Deck goes here-->
-                  </div>                    
-                    
-                  
+                  </div> 
+                </div>
                   <div 
-                     class="col-md-1"            
+                     class="col-md-2"            
                      >
                       <div 
-                        class="#columns column" style="height: 50px"
-                        >
-                        <div class="row">
-                          <a href="#carousel-example-generic" role="button" data-slide="prev">
+                        style="height: 50px;width: 220px;"
+                        >            
+                            <a 
+                              href="#carousel-example-generic" 
+                              role="button" 
+                              data-slide="prev"
+                            > 
                             <div 
-                              class="#columns column col-md-6"
-                              style="width:150px; height: 50px;left:10px"
-                            >                              
-                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>                                                        
+                              class="#columns column col-md-4"
+                              style="width:55px; height: 50px;left:10px"
+                            >                                          
+                                <span 
+                                  style="top:25%;left:20%"
+                                  class="glyphicon glyphicon-chevron-left" 
+                                  aria-hidden="true"
+                                ></span>
+                                                                                     
                             </div>
-                          </a>
-                          <a href="#carousel-example-generic" role="button" data-slide="next">
+                            </a> 
+
                             <div 
-                              class="#columns column col-md-6"
-                              style="width:150px; height: 50px;left:10px"
+                              class="#columns column col-md-4"
+                              style="width:60px; height: 50px;left:8px;"
+                              id="addCombo"
+                            >
+                                 <button
+                                    class="btn btn-success btn-xl"
+                                    style="
+                                      width: 220%;
+                                      height: 100%;                                      
+                                      margin-left:-15px
+                                    "
+                                    >
+                                 <i style=""
+                                    class="glyphicon glyphicon-plus"
+                                    ></i>
+                                 </button>  
+                                                                                     
+                            </div>
+                          
+                          <a 
+                            href="#carousel-example-generic" 
+                            role="button" 
+                            data-slide="next"
+                          >
+                            <div 
+                              class="#columns column col-md-4"
+                              style="width:50px; height: 50px;left:5px"
                             >                            
-                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>                                
-                              
+                              <span 
+                                style="top:25%;left:5%"
+                                class="glyphicon glyphicon-chevron-right" 
+                                aria-hidden="true"
+                              ></span>
                             </div>
                           </a>
-                        </div>                                                      
+                                                                               
                       </div>
                       <div 
                         class="#columns column"
@@ -208,8 +282,6 @@
                            data-ride="carousel"  
                            data-interval="false"                                          
                            >
-                          
-                           <!-- Wrapper for slides -->
                            <div 
                               class="carousel-inner" 
                               role="listbox"
@@ -219,13 +291,12 @@
                                  class="item active" 
                                  >
                                  <div 
-                                    class="#columns column"
+                                    class="#columns column comboBox"
                                     >
                                     <div 
                                        class="delete-ajust" 
                                        align="right"
-                                       >
-                                       combo 1
+                                       >                                       
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -239,65 +310,17 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"
+                                          class="item"
                                           id="comboCards"> 
                                         </div>                                                                                  
                                     </div>
-                                 </div>
-                                 <div 
-                                    class="#columns column"
-                                    >
-                                    <div class="delete-ajust" align="right">combo 2
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                    >
-                                      <div 
-                                        class="item active"
-                                        id="comboCards"> 
-                                      </div>
-                                    </div>
-                                 </div>
-                                 <div 
-                                    class="#columns column"
-                                    >
-                                    <div 
-                                       class="delete-ajust" 
-                                       align="right"
-                                       >combo 3
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                       >                                       
-                                        <div 
-                                          class="item active"
-                                          id="comboCards"
-                                        > 
-                                        </div>                                                                                  
-                                    </div>
-                                 </div>                                 
+                                 </div>                                                                
                               </div>
                               <div class="item">
                                  <div 
-                                    class="#columns column"
+                                    class="#columns column comboBox"
                                     >
-                                    <div class="delete-ajust" align="right">combo 4
+                                    <div class="delete-ajust" align="right">
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -316,14 +339,104 @@
                                         > 
                                         </div>               
                                     </div>
-                                 </div>                                 
+                                 </div>    
+                              </div>
+                              <div 
+                                class="item"                                
+                              >  
+                                                                                            
+                              </div>
+                           </div>
+                           <!-- Controls -->                           
+                           
+                        </div>
+                     </div>
+                  </div>
+                  <div 
+                     class="col-md-3"
+                     style="padding-left: 50px;"                                
+                     >
+                      <div 
+                        style="height: 50px"                        
+                        >
+                        <div class="row"> 
+                            <a href="#brick-carousel" role="button" data-slide="prev">                          
+                            <div 
+                              class="#columns column col-md-4"
+                              style="width:60px; height: 50px;left:10px"
+                            >            
+                                
+
+                                <span 
+                                  style="top:25%;left:20%"
+                                  class="glyphicon glyphicon-chevron-left" 
+                                  aria-hidden="true"
+                                ></span>
+                                                                                     
+                            </div>
+                            </a> 
+                            <div 
+                              class="#columns column col-md-4"
+                              style="width:100px; height: 50px;left:8px;"
+                              id="addBrick"
+                            >
+                                 <button
+                                    class="btn btn-success btn-xl"
+                                    style="
+                                      width: 146%;
+                                      height: 100%;                                      
+                                      margin-left:-15px
+                                    "
+                                    >
+                                 <i style=""
+                                    class="glyphicon glyphicon-plus"
+                                    ></i>
+                                 </button>  
+                                                                                     
+                            </div>
+                          
+                          <a href="#brick-carousel" role="button" data-slide="next">
+                            <div 
+                              class="#columns column col-md-4"
+                              style="width:60px; height: 50px;left:5px"
+                            >                            
+                              <span 
+                                style="top:25%;left:5%"
+                                class="glyphicon glyphicon-chevron-right" 
+                                aria-hidden="true"
+                                ></span>                                
+                              
+                            </div>
+                          </a>
+                        </div>                                                      
+                      </div>
+                      <div 
+                        class="#columns column"
+                        >                      
+                        <div 
+                           id="brick-carousel" 
+                           class="carousel slide" 
+                           data-ride="carousel"  
+                           data-interval="false"                                          
+                           >
+                          
+                           <!-- Wrapper for slides -->
+                           <div 
+                              class="carousel-inner" 
+                              role="listbox"
+                              id="comboBrick"
+                              >                              
+                              <div 
+                                 class="item active" 
+                                 >
                                  <div 
-                                    class="#columns column"
+                                    class="#columns column brickBox"
                                     >
                                     <div 
                                        class="delete-ajust" 
                                        align="right"
-                                       >combo 5
+                                       >
+                                       Brick
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -337,19 +450,17 @@
                                        class="special-col"
                                        >                                       
                                         <div 
-                                          class="item active"
-                                          id="comboCards"
-                                        > 
+                                          class="item"
+                                          id="comboBrick"> 
                                         </div>                                                                                  
                                     </div>
-                                 </div>
+                                 </div>                                                                
+                              </div>
+                              <div class="item">
                                  <div 
-                                    class="#columns column"
+                                    class="#columns column brickBox"
                                     >
-                                    <div 
-                                       class="delete-ajust" 
-                                       align="right"
-                                       > combo 6
+                                    <div class="delete-ajust" align="right">Brick
                                        <button                                         
                                           type="click" 
                                           class="btn btn-circle-delete  btn-xl"
@@ -361,21 +472,20 @@
                                     </div>
                                     <div 
                                        class="special-col"
-                                       >                                       
+                                       >            
                                         <div 
-                                          class="item active"
-                                          id="comboCards"
+                                          class="item"
+                                          id="comboBrick"
                                         > 
-                                        </div>                                                                                  
+                                        </div>               
                                     </div>
-                                 </div>
+                                 </div>    
                               </div>
                               <div 
                                 class="item"                                
                               >  
                                 <div 
-                                   class="#columns column"
-                                   style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"
+                                   class="#columns column brickBox"        
                                    >
                                    <div 
                                       class="delete-ajust" 
@@ -394,15 +504,14 @@
                                       class="special-col"
                                       >                                       
                                         <div 
-                                         class="item active"
+                                         class="item"
                                          id="brick"
                                         > 
                                        </div>                                                                                  
                                    </div>
                                 </div>
                                 <div 
-                                  class="#columns column"  
-                                  style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"   
+                                  class="#columns column brickBox"                                    
                                 >
                                    <div 
                                       class="delete-ajust" 
@@ -421,15 +530,14 @@
                                       class="special-col"
                                       >                                       
                                         <div 
-                                          class="item active"
+                                          class="item "
                                           id="brick"
                                         > 
                                        </div>                                                                                  
                                    </div>
                                 </div>
                                 <div 
-                                   class="#columns column"
-                                   style="background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);"  
+                                   class="#columns column brickBox"   
                                 >
                                    <div 
                                       class="delete-ajust" 
@@ -448,46 +556,41 @@
                                       class="special-col"
                                       >                                       
                                         <div 
-                                          class="item active"
+                                          class="item"
                                           id="brick"
                                         > 
                                        </div>                                                                                  
                                    </div>
                                 </div>                                                            
                               </div>
-                           </div>
-                           <!-- Controls -->                           
-                           <div  id="addCombo" class="special-col" align="center" style="padding-top: 10px"> 
-                              <button                                                                
-                                 type="submit" 
-                                 class="btn btn-success btn-circle btn-xl"
-                                 >
-                              <i 
-                                 class="glyphicon glyphicon-plus"
-                                 ></i>
-                              </button>  
-                           </div>
+                           </div>                          
                         </div>
                      </div>
-                  </div>
-                  <div id="extraDeckDiv" class="#columns long-column">
-                    <!--the extra deck goes here-->  
                   </div>                  
-               </div>
+               
             </div>
-            <hr>
-            <hr>
+            <hr>            
             <div align="center" class="container-fluid">
               <div class="row">
-                <label style="color:white">Indique el numero de veces que desea que se ejecute la prueba</label>
-                <input  id="iterations" type="number" min = "1" required>                
-              </div>
-               <button  
-                  id="pruebita"
-                  style="margin-top:10px;"
-                  class="go-up btn btn-primary nextBtnSpecial btn-lg " 
-                  type="button" 
-                  >Siguiente Paso</button>
+                <div class="col-md-8">
+                  <label style="color:white">Indique el numero de veces que desea que se ejecute la prueba</label>                  
+                    <select name="iterations" id="iterations">
+                      <option value="1000">1000</option>
+                      <option value="10000">10000</option>
+                      <option value="100000">100000</option>
+                      <option value="1000000">1000000</option>
+                    </select>                   
+                </div> 
+                <div class="col-md-4">
+                  <button  
+                    id="pruebita"
+                    style="margin-top:5px;"
+                    class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
+                    type="button" 
+                  >Siguiente Paso
+                  </button>
+                </div>                         
+              </div>               
             </div>
          </div>
          <br>
@@ -522,6 +625,30 @@
                      </table>
                   </div> 
                 </div>
+                <div class="col-md-6" style="padding-top: 10px">  
+                    <div                       
+                      class="table-responsive result-column"
+                    >
+                       <table 
+                          class="table table-bordred table-striped"
+                          >
+                          <tbody id="combosImagesIndividualResult">
+                          </tbody>
+                       </table>
+                    </div> 
+                </div>
+                <div class="col-md-6" style="padding-top: 10px">  
+                  <div 
+                     class="table-responsive result-column"
+                     >
+                     <table 
+                        class="table table-bordred table-striped"
+                        >
+                        <tbody id="brickImagesIndividualResult">
+                        </tbody>
+                     </table>
+                  </div> 
+                </div>
                 <div style="padding-top: 10px;"class="col-md-9">  
                     <div 
                        class="table-responsive result-column"
@@ -546,40 +673,8 @@
                      </table>
                   </div> 
                 </div>
-            </div>  
-                          
-
-         </div>
-         <hr>
-         <hr>
-         <div 
-            class="row"
-            >
-            <div 
-               class="col-lg-12 col-sm-12 col-xs-12"
-               >
-               <div 
-                  class="links"
-                  >
-                  <a 
-                     href="https://github.com/angelsucasas"
-                     style="color:white"
-                     >Angel Sucasas
-                  </a>
-                  <a 
-                     href="https://github.com/angelsucasas"
-
-                     ><span class="glyphicon glyphicon-envelope" style="color:white;font-size:20px"></span>
-                  </a>
-                  <a 
-                     href="https://www.linkedin.com/in/%C3%A1ngel-alejandro-sucasas-goncalves-1829871b0/"
-                     ><i class="fa fa-linkedin-square" style="color:white;font-size:24px"></i>
-                  </a>                  
-               </div>
-            </div>
-         </div>
-         <hr>
-         <hr>
+            </div>                          
+         </div>         
       </div>
    </div>
    </div>
@@ -613,5 +708,8 @@
 ></script>
 <script 
   src="./public/js/scrollMagic.js"
+></script>
+<script 
+  src="./public/js/changeDeckDinamicly.js"
 ></script>
 </html>

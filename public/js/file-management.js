@@ -8,8 +8,7 @@ function readSingleFile(e) {
   }
   var reader = new FileReader();
   reader.onload = function(e) {
-    var contents = e.target.result;
-    console.log(contents);
+    var contents = e.target.result;    
     readFile(contents);
   };
   reader.readAsText(file);
@@ -27,8 +26,7 @@ function readFile(cont){
 
   deckStrings = deckStrings.slice(1);
   deckStrings = deckStrings.slice(1);
-
-  console.log(deckStrings)
+  
 
   deck = [];
   sideDeck = [];
@@ -55,13 +53,12 @@ function readFile(cont){
             else if(flag==1){                  
                 extraDeck.push(deckStrings[cont]);
             }
-            /*else if(flag==2){                                      
+            else if(flag==2){                                      
                 sideDeck.push(deckStrings[cont])
-            }*/
+            }
         }
         
     }
-  extraDeck = extraDeck.slice(1); 
-  console.log(deck);
-  console.log(extraDeck);   
+  extraDeck = extraDeck.slice(1);  
+  sideDeck = sideDeck.slice(1);   
 }     

@@ -9,6 +9,11 @@
   -khtml-user-drag: element;
   -webkit-user-drag: element;
 }
+
+.littleCard{
+
+}
+
 .card {
   height: 80px;
   width: 60px;

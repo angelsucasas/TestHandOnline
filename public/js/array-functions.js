@@ -43,10 +43,10 @@ function getQuantityOfCopies(card,combo){
 function getIDContentOfHtmlElement(htmlElement){
   let contentFilter, cardsIDs = [];
   
-  [].forEach.call(htmlElement,function(firstChild){
+  [].forEach.call(htmlElement,function(firstChild){    
     contentFilter = [];
-    [].forEach.call(firstChild.childNodes,function(secondChild){
-      if(secondChild.id){
+    [].forEach.call(firstChild.childNodes,function(secondChild){      
+      if(secondChild.id){        
         contentFilter.push(secondChild.id);
       }     
     })

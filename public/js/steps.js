@@ -9,12 +9,30 @@ $(document).ready(function () {
 
     allWells.hide();
  
-    navListItems.click(function (e) {
-
+    navListItems.click(function (e) {        
         e.preventDefault();
+
         var $target = $($(this).attr('href')),
             $item = $(this);
+            if($target[0].attributes[1].nodeValue=="step-1"){
+                if(!document.getElementById('logo')){
+                    let newRow =  document.createElement('div');
+                    newRow.id = "logo"
+                    addClass(newRow,'row logoPadding animate__animated animate__flip');
 
+                    let newImage = document.createElement('img');
+                    newImage.src = "./public/testhandLogoFinal.png";
+                    addClass(newImage,'logoSize');
+
+                    newRow.appendChild(newImage);
+                    document.getElementById('mainContainer').insertBefore(newRow,document.getElementById('fisrtRow'))                
+                }                
+            }else{                   
+                if(document.getElementById('logo')){
+                    document.getElementById('mainContainer').removeChild(document.getElementById('logo'));
+                }                
+            }
+        
         if (!$item.hasClass('disabled')) {
             navListItems.removeClass('btn-primary').addClass('btn-default');
             $item.addClass('btn-primary');

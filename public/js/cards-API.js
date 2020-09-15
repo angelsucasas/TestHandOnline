@@ -54,11 +54,13 @@ comboData.addEventListener("click",async function(e){
 
 async function sendCardsID(){ 
   let boxOfCombos = document.querySelectorAll('#comboCards');
-  let boxOfBricks = document.querySelectorAll('#brick');
+  let boxOfBricks = document.querySelectorAll('#comboBrick');
   
   
   let cardsByCombo = getIDContentOfHtmlElement(boxOfCombos);
-  let cardsByBrick = getIDContentOfHtmlElement(boxOfBricks);  
+  let cardsByBrick = getIDContentOfHtmlElement(boxOfBricks);
+  console.log(cardsByCombo)  
+  console.log(cardsByBrick)
   let numberOfIterations = document.getElementById("iterations").value;  
  
   table.innerHTML="";
@@ -71,6 +73,32 @@ async function sendCardsID(){
 
 let sendDeckButton = document.getElementById("testForm");
 
+function printCardDragables(deck,DeckDiv){
+  [].forEach.call(deck, function (Card) {
+    let cardImage = document.createElement('img');
+    cardImage.setAttribute('draggable', true);  
+    cardImage.src =`./public/pics/${Card}.jpg`;
+    cardImage.id = Card;
+    addClass(cardImage,"#card card"); 
+    DeckDiv.appendChild(cardImage);
+  });
+}
+
+function printCardNotDragables(deck,DeckDiv){
+  [].forEach.call(deck, function (Card) {
+    let cardImage = document.createElement('img');
+    cardImage.setAttribute('draggable', false);       
+    cardImage.src =`./public/pics/${Card}.jpg`;
+    cardImage.id = Card;
+    addClass(cardImage,"#card card"); 
+    DeckDiv.appendChild(cardImage);
+  });
+}
+
+function resetMainDivTable(mainDeckDiv){
+  mainDeckDiv.innerHTML="";
+}
+
 /** gets the file that the user input at step 1 
 *  and puts it in the DOM
 *
@@ -82,27 +110,7 @@ sendDeckButton.addEventListener('submit', function(event){
   let mainDeckDiv = document.getElementById('mainDeckDiv');
   mainDeckDiv.innerHTML = "";
 
-  [].forEach.call(deck, function (mainDeckCard) {
-    let cardImage = document.createElement('img');
-    cardImage.setAttribute('draggable', true);  
-    cardImage.src =`./public/pics/${mainDeckCard}.jpg`;
-    cardImage.id = mainDeckCard;
-    addClass(cardImage,"#card card"); 
-    mainDeckDiv.appendChild(cardImage);
-  });
-
-  let extraDeckDiv = document.getElementById('extraDeckDiv');
-  extraDeckDiv.innerHTML = "";
-
-  [].forEach.call(extraDeck, function (extraDeckCard){
-    let cardImage = document.createElement('img');
-    cardImage.setAttribute('draggable', false);  
-    cardImage.src =`./public/pics/${extraDeckCard}.jpg`
-    cardImage.id = extraDeckCard;
-    addClass(cardImage,"#card card"); 
-    extraDeckDiv.appendChild(cardImage);
-  });
-       
+  printCardDragables(deck,mainDeckDiv);       
 });
 
 
