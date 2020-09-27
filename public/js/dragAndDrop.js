@@ -75,8 +75,8 @@ function handleDragEnd(e) {
 
   [].forEach.call(cards, function (col) {
     col.classList.remove('over');
-    col.style.opacity = '1';     
-    dragSrcEl.style.opacity = '1';        
+    col.style.opacity = '1';
+    dragSrcEl.style.opacity = '1';
   });
 }
 

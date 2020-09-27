@@ -68,6 +68,7 @@ function addBrick(){
     mainColumn.addEventListener('dragleave', handleDragLeave, false);
     mainColumn.addEventListener('drop', handleDrop, false);
     mainColumn.addEventListener('dragend', handleDragEnd, false);
+    cols = document.querySelectorAll('.column');
   }
 }
 
@@ -130,6 +131,7 @@ function addCombo(){
     mainColumn.addEventListener('dragleave', handleDragLeave, false);
     mainColumn.addEventListener('drop', handleDrop, false);
     mainColumn.addEventListener('dragend', handleDragEnd, false);
+    cols = document.querySelectorAll('.column');
   }
 };
 

@@ -1,0 +1,25 @@
+.parallelogram {  
+	width: 100%;
+	height: 100px;
+	transform: skew(20deg);
+	background: green;
+
+}
+
+.litle-parallelogram{  
+	width: 100px;
+	height: 100px;
+	transform: skew(20deg);
+	background: green;
+}
+
+.normalDegree{
+  transform: skew(-20deg);
+}
+
+.equivalentMark{
+	width: 30px;
+	height: 10px;
+	background-color: white;
+	padding-left: 5px;
+}

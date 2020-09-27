@@ -55,20 +55,58 @@ comboData.addEventListener("click",async function(e){
 async function sendCardsID(){ 
   let boxOfCombos = document.querySelectorAll('#comboCards');
   let boxOfBricks = document.querySelectorAll('#comboBrick');
+  let boxOfEquivalentsFathers = document.querySelectorAll('#comboEquivalentFather');
+  let boxOfEquivalentsChilds = document.querySelectorAll('#comboEquivalentChild');
   
   
   let cardsByCombo = getIDContentOfHtmlElement(boxOfCombos);
   let cardsByBrick = getIDContentOfHtmlElement(boxOfBricks);
-  console.log(cardsByCombo)  
-  console.log(cardsByBrick)
+  
+  let cardsByEquivalentFather = getIDContentOfHtmlElement(boxOfEquivalentsFathers);
+  let cardsByEquivalentChilds = getIDContentOfHtmlElement(boxOfEquivalentsChilds);
+  if(cardsByEquivalentFather.length!=boxOfEquivalentsFathers.length && boxOfEquivalentsChilds.length!=cardsByEquivalentChilds.length){
+    alert("debe haber una carta minimo en cada caja que creo")
+  }
+
+  [cardsByEquivalentFather,cardsByEquivalentChilds] = alignChildAndFathers(cardsByEquivalentFather,cardsByEquivalentChilds)
+
   let numberOfIterations = document.getElementById("iterations").value;  
  
   table.innerHTML="";
 
-  rawAnalisis(cardsByCombo,cardsByBrick, numberOfIterations);   
+
+  rawAnalisis(cardsByCombo,cardsByBrick, numberOfIterations, cardsByEquivalentFather, cardsByEquivalentChilds);   
   hiperbolicDistributionAnalisis(cardsByCombo);
 }
 
+function alignChildAndFathers(fathersCombo, childsCombo){
+  //ok entonces alinia los padres e hijos
+  //y entonces? hmmm
+  let childsArray = [];
+  let fathersArray = [];
+  let foundFlag, valuePosition, count=0;  
+  for( individualChilds of childsCombo){
+    let individualChildsLength = individualChilds.length;    
+    for(
+      let fathersComboCount=0;
+      fathersComboCount<individualChildsLength;
+      fathersComboCount++
+    ){
+      //por cada elemento
+      //registra cada hijo, en caso de que no exista
+      //quedaria como [hijoA,hijoB,hijoC] [[p1,p2,p3],[p2,p3],[p4]]
+      [ foundFlag , valuePosition ] = findValueInArrays(childsArray,individualChilds[fathersComboCount])
+      if(foundFlag){          
+        fathersArray[valuePosition].push(fathersCombo[count][0])               
+      }else{                
+        fathersArray.push([fathersCombo[count][0]])
+        childsArray.push(individualChilds[fathersComboCount])
+      }
+    }
+    count++;
+  }
+  return [fathersArray,childsArray]
+}
 
 
 let sendDeckButton = document.getElementById("testForm");
@@ -109,8 +147,11 @@ sendDeckButton.addEventListener('submit', function(event){
     
   let mainDeckDiv = document.getElementById('mainDeckDiv');
   mainDeckDiv.innerHTML = "";
+  mainDeck2.innerHTML = "";
 
-  printCardDragables(deck,mainDeckDiv);       
+  printCardDragables(deck,mainDeckDiv);
+  printCardDragables(deck,mainDeck2)
+
 });
 
 

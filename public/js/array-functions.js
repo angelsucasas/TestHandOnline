@@ -68,3 +68,41 @@ function draw5randomCardsFromDeck(deck){
 
   return hand; 
 }
+
+function initializeArray(numberOfInitializations,array){
+   while(numberOfInitializations){    
+    array[numberOfInitializations-1] = 0;
+    numberOfInitializations-=1;
+  }
+  return array;
+}
+
+function copyArray(originalArray){
+  let newArray = []
+  for(individualElement of originalArray){
+    newArray.push(individualElement);
+  }
+
+  return newArray;
+}
+
+function findValueInArrays(comboChilds,value){
+  let count = 0;  
+  for(individualChild of comboChilds){
+    if(individualChild==value){      
+      return [1,count]
+    }
+    
+  count++;   
+  }  
+ return [0,count-1] 
+}
+
+function checkIfThisElementExist(elementsArray,value){   
+   for(individualChild of elementsArray){
+     if(individualChild==value){      
+       return elementsArray.indexOf(individualChild)
+     }       
+   }  
+  return -1
+}

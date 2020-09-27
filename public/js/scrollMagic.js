@@ -1,3 +1,3 @@
 
-var controller = new ScrollMagic.Controller();
+//var controller = new ScrollMagic.Controller();
 

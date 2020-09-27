@@ -6,28 +6,35 @@
   <link rel="shortcut icon" href="./public/testhandLogoFinal.png" />
   <title>TestHand Online</title>
 
-  <!-- Fonts -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  <!---gsap-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-
-  <!-- scrollMagic-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-
+  
+  <meta 
+    name="csrf-token" 
+    content="{{ csrf_token() }}"
+  >
 
   <!--bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"    
+  />
+    
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    href="./public/css/animate.min.css"
+  />  
 
-  <!------ Include the above in your HEAD tag ---------->
+    <script 
+    src="./public/js/jquery.min.js"
+  ></script>
+  <script 
+    src="./public/js/bootstrap.min.js"
+  ></script>
+
+  <!-- Fonts -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"    
+  />  
 
   <!-- Styles -->
   <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
@@ -35,7 +42,9 @@
   <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
   <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
   <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />       
-  <link href="./public/css/heights.css" rel="stylesheet" type="text/css" />        
+  <link href="./public/css/heights.css" rel="stylesheet" type="text/css" />
+  <link href="./public/css/paralelogram.css" rel="stylesheet" type="text/css" /> 
+
 </head>
 <body >
    <div 
@@ -95,6 +104,21 @@
                      >
                   </a>
                   <p style="color:white">Paso 3</p>
+               </div>
+               <div class="stepwizard-step">
+                  <a 
+                     href="#step-4" 
+                     type="button" 
+                     class="btn btn-default btn-circle" 
+                     disabled="disabled"
+                     >
+                  <img 
+                     class="btn-circle-end"
+                     src="./public/results4.png" 
+                     width="15px"
+                     >
+                  </a>
+                  <p style="color:white">Paso 4</p>
                </div>
             </div>
           </div>        
@@ -582,8 +606,7 @@
                     </select>                   
                 </div> 
                 <div class="col-md-4">
-                  <button  
-                    id="pruebita"
+                  <button                      
                     style="margin-top:5px;"
                     class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
                     type="button" 
@@ -598,17 +621,154 @@
          <div 
             class="row setup-content animate__animated animate__fadeInLeft" 
             id="step-3"
+          >
+              <button 
+                class="sideElementToScreen"
+                style="top:55px;"
+                id="changeToMainDeck2"              
+              >
+                <p 
+                  class="verticalWrite"                  
+                >Main</p>
+              </button>
+              <button 
+                class="sideElementToScreen"
+                style="top:155px;"
+                id="changeToExtraDeck2" 
+              >
+                <p 
+                  class="verticalWrite"
+                >Extra</p>
+              </button>
+              <button 
+                class="sideElementToScreen"
+                style="top:255px;"
+                id="changeToSideDeck2"
+              >
+                <p 
+                  class="verticalWrite"
+                >Side</p>
+              </button>
+              <h3 
+                id="test3" 
+                style="color:white"
+              > Paso 3: Agrega las equivalencias</h3>
+                <div class="row">
+                  <div class="col-md-7">
+                    <div id="mainDeckDiv2" class="big-column">
+                      <!--The main Deck goes here-->
+                    </div> 
+                  </div>
+                  <div 
+                    class="col-md-5"            
+                  >
+                    <div 
+                       class="table-responsive equivalent-column"
+                       >
+                       <table 
+                          class="table table-bordred"
+                          >
+                          <tbody id="equivalentTable">
+                            <tr>
+                              <td>
+                                <div 
+                                  class="row"
+                                >
+                                  <div 
+                                    class="col-md-3"                        
+                                  >
+                                  <div class="row">
+                                    <div class="col-md-8">
+                                      <div 
+                                        class="litle-parallelogram"
+                                      >
+                                        <div 
+                                            class="#columns column equivalentColumn normalDegree"
+                                        >
+                                          <div
+                                            id="comboEquivalentFather"
+                                            class="item active"
+                                          >                                          
+                                          </div>
+                                        </div>                          
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <hr 
+                                        class="equivalentMark"
+                                      > 
+                                      <hr 
+                                        class="equivalentMark"
+                                      >  
+                                    </div>
+                                  </div>
+                                  </div>
+                                  <div 
+                                    class="col-md-9"
+                                  >                
+                                    <div                            
+                                      class="parallelogram"                            
+                                    >
+                                      <div 
+                                          class="#columns column equivalentColumn normalDegree"
+                                      >
+                                        <div
+                                          id="comboEquivalentChild"
+                                          class="item active"
+                                        >
+                                          
+                                        </div>
+                                      </div>    
+                                    </div>
+                                  </div>                
+                                </div> 
+                              </td>
+                            </tr>
+                            <tr id="addANewEquivalentBoxTr">
+                              <td>
+                                <button
+                                  class="btn btn-success btn-xl"
+                                  id="addANewEquivalentBox"
+                                  style="
+                                    width: 100%;
+                                    height: 100%;                                    
+                                  "
+                                >
+                                  <i
+                                    class="glyphicon glyphicon-plus"
+                                  ></i>
+                                </button>
+                              </td>
+                            </tr>             
+                          </tbody>
+                       </table>
+                    </div>
+                </div>                  
+            </div>
+            <div align="center" class="container-fluid">
+              <button  
+                id="pruebita"
+                style="margin-top:5px;"
+                class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
+                type="button" 
+              >Siguiente Paso
+              </button>
+            </div>
+          </div>
+         <div 
+            class="row setup-content animate__animated animate__fadeInLeft" 
+            id="step-4"
             >
-            <h3 style="color:white"> Paso 3: Resultado de las pruebas</h3>
+            <h3 style="color:white"> Paso 4: Resultado de las pruebas</h3>
             <div class="row"> 
                 <div class="col-md-9">  
                     <div 
                        class="table-responsive result-column"
                        >
                        <table 
-                          class="table table-bordred table-striped"
+                          class="table table-bordred"
                           >
-                          <tbody id="mytable">
+                          <tbody id="mytable" style="color:black">
                           </tbody>
                        </table>
                     </div> 
@@ -618,9 +778,9 @@
                      class="table-responsive result-column"
                      >
                      <table 
-                        class="table table-bordred table-striped"
+                        class="table table-bordred "
                         >
-                        <tbody id="rawAnalisisResultImage">
+                        <tbody id="rawAnalisisResultImage" style="color:black">
                         </tbody>
                      </table>
                   </div> 
@@ -630,9 +790,9 @@
                       class="table-responsive result-column"
                     >
                        <table 
-                          class="table table-bordred table-striped"
+                          class="table table-bordred"
                           >
-                          <tbody id="combosImagesIndividualResult">
+                          <tbody id="combosImagesIndividualResult" style="color:black">
                           </tbody>
                        </table>
                     </div> 
@@ -642,9 +802,9 @@
                      class="table-responsive result-column"
                      >
                      <table 
-                        class="table table-bordred table-striped"
+                        class="table table-bordred "
                         >
-                        <tbody id="brickImagesIndividualResult">
+                        <tbody id="brickImagesIndividualResult" style="color:black">
                         </tbody>
                      </table>
                   </div> 
@@ -654,9 +814,9 @@
                        class="table-responsive result-column"
                        >
                        <table 
-                          class="table table-bordred table-striped"
+                          class="table table-bordred"
                           >
-                          <tbody id="hipergeometricDistributionResult">
+                          <tbody id="hipergeometricDistributionResult" style="color:black>
                           </tbody>
                        </table>
                     </div> 
@@ -666,50 +826,58 @@
                      class="table-responsive result-column"
                      >
                      <table 
-                        class="table table-bordred table-striped"
+                        class="table table-bordred"
                         >
-                        <tbody id="hipergeometricDistributionImage">
+                        <tbody id="hipergeometricDistributionImage" style="color:black">
                         </tbody>
                      </table>
                   </div> 
                 </div>
             </div>                          
-         </div>         
+         </div>          
+        </div>         
       </div>
    </div>
    </div>
 </body>
-<script 
-  src="./public/js/Card.js"
-></script>
-<script 
-  src="./public/js/steps.js"
-></script>
-<script 
-  src="./public/js/dragAndDrop.js"
-></script>
-<script 
-  src="./public/js/dinamic-boxes.js"
-></script>
-<script 
-  src="./public/js/cards-API.js"
-></script>
-<script 
-  src="./public/js/class-manager.js"
-></script>
-<script 
-  src="./public/js/file-management.js"
-></script>
-<script 
-  src="./public/js/array-functions.js"
-></script>
-<script 
-  src="./public/js/analitics-functions.js"
-></script>
-<script 
-  src="./public/js/scrollMagic.js"
-></script>
-<script 
-  src="./public/js/changeDeckDinamicly.js"
-></script>
+  <script 
+    src="./public/js/Card.js"
+  ></script>
+  <script 
+    src="./public/js/steps.js"
+  ></script>
+  <script 
+    src="./public/js/dragAndDrop.js"
+  ></script>
+  <script 
+    src="./public/js/dinamic-boxes.js"
+  ></script>
+  <script 
+    src="./public/js/cards-API.js"
+  ></script>
+  <script 
+    src="./public/js/class-manager.js"
+  ></script>
+  <script 
+    src="./public/js/file-management.js"
+  ></script>
+  <script 
+    src="./public/js/array-functions.js"
+  ></script>
+  <script 
+    src="./public/js/analitics-functions.js"
+  ></script>
+  <script 
+    src="./public/js/scrollMagic.js"
+  ></script>
+  <script 
+    src="./public/js/changeDeckDinamicly.js"
+  ></script>
+  <script 
+    src="./public/js/equivalent.js"
+  ></script>
 </html>
+
+
+
+
