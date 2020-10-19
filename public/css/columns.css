@@ -26,8 +26,8 @@
 .BrickBoxes{}
 
 .sideElementToScreen{
-	position: absolute;
-	left: -7vw; 
+	position: fixed;
+	left: 0; 
 	height: 100px;	
 	border-radius: 0px 10px 20px 0px;  
 	background: #4e54c8;  /* fallback for old browsers */
@@ -45,8 +45,9 @@
 }
 
 .special-col{
-	width:300px;
-	height:150px;  
+	width: 22vw;/*300px;*/
+	height: 14vh;/*150px;*/
+	min-height: : 150px;
 	padding-top: 20px;
 	padding-left: 10px;  
 	padding-right: 10px;
@@ -72,11 +73,11 @@
 }
 
 .big-column {
-	height: 520px;
-	width: 680px;
+	height: 87vh;/*520px;* 968?*/
+	width: 50vw;/*680px; t:1349*/
 	float: left;
 	border: 2px solid #666666;
-	/*background-color: #ccc;*/
+	background-color: red;
 	margin-right: 5px;
 	-webkit-border-radius: 10px;
 	-ms-border-radius: 10px;
@@ -89,8 +90,8 @@
 }
 
 .column {
-	height: 150px;
-	width: 220px;
+	height: 30vh;/*150px;*/
+	width: 16vw;/*220px;*/
 	float: left;
 		
 	margin-right: 5px;
@@ -124,8 +125,8 @@
 	height: 60px;
 	width: 350px;  
 	border: 2px solid #666666;
-	background-color: #FA8BFF;
-	background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,73,180,1) 39%, rgba(0,212,255,1) 100%);
 	margin-right: 5px;
 	-webkit-border-radius: 10px;
 	-ms-border-radius: 10px;
