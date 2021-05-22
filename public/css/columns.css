@@ -3,22 +3,22 @@
 }
 
 .brickBox{
-	background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+	background: #a25edd;
 }
 
 .comboBox{
-	background-color: #F4D03F;
-	background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);	
+	background: #a25edd;
 }
 
 .logoPadding{
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
+	padding-bottom: 1vh;
 	text-shadow: 2px 2px red;
 }
 
 .logoSize{
-	width: 200px; 
-	height: 200px
+	width: 100%; 
+	height: 50%;
 }
 
 .ComboBoxes{}
@@ -29,7 +29,8 @@
 	position: fixed;
 	left: 0; 
 	height: 100px;	
-	border-radius: 0px 10px 20px 0px;  
+	border-radius: 0px 10px 20px 0px;
+
 	background: #4e54c8;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -45,12 +46,9 @@
 }
 
 .special-col{
-	width: 22vw;/*300px;*/
-	height: 14vh;/*150px;*/
-	min-height: : 150px;
-	padding-top: 20px;
-	padding-left: 10px;  
-	padding-right: 10px;
+	width: 100%;
+	height: 70%;
+	overflow-y: scroll;	
 }
 
 .long-column{
@@ -73,37 +71,30 @@
 }
 
 .big-column {
-	height: 87vh;/*520px;* 968?*/
-	width: 50vw;/*680px; t:1349*/
+	height: 33em;/*520px;* 968?*/
+	width: 100%;/*680px; t:1349*/
 	float: left;
-	border: 2px solid #666666;
-	background-color: red;
-	margin-right: 5px;
-	-webkit-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-moz-border-radius: 10px;
+	background: #a25edd;  /* fallback for old browsers */
+	margin: 0;
 	border-radius: 10px;
-
+	align-self: center;
 	text-align: center;  
 	padding-top: 25px;
-	padding-left: 25px;
+	overflow-y: scroll;
 }
 
 .column {
-	height: 30vh;/*150px;*/
-	width: 16vw;/*220px;*/
+	height: 9.5em;/*150px;*/
+	width: 100%;/*220px;*/
 	float: left;
 		
-	margin-right: 5px;
-	-webkit-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-moz-border-radius: 10px;
 	border-radius: 10px;
 
 	text-align: center;
 	cursor: move;
+	margin-top:5px;
 }
-.column: hover{
+.column:hover{
 	background-color: red;
 }
 
@@ -122,19 +113,11 @@
 
 
 .input-column{
-	height: 60px;
-	width: 350px;  
-	border: 2px solid #666666;
-	background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,73,180,1) 39%, rgba(0,212,255,1) 100%);
+	height: 100%;
+	width: 100%;
+	background: #461B7B;
 	margin-right: 5px;
-	-webkit-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 3px #000;
-	-ms-box-shadow: inset 0 0 3px #000;
-	box-shadow: inset 0 0 3px #000;
+	border-radius: 10px;	
 	text-align: center;     
 }
 
@@ -158,15 +141,14 @@
 }
 
 .equivalentColumn{
-	margin-left:10px;
-	margin-top:5px;
-	width:80%;
-	height:90%;	
+	width:110%;
+	height:100%;
+	/*overflow-y: scroll;*/
 }
 
 .equivalent-column{
 	height: 525px;
-	width: 120%;
+	width: 100%;
 	float: left;
 	border: 2px solid #666666;
 	
@@ -174,5 +156,12 @@
 	
 	text-align: center;  
 	padding-top: 25px;
-	padding-left: 25px;
+	/*padding-left: 25px;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.nopaddings{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }

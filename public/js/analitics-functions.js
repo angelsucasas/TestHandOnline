@@ -35,12 +35,12 @@ function hiperbolicDistributionAnalisis(array){
 
 
   hipergeometricTable.innerHTML=""
-  addToTheTable(`Resultados basados en una distribucion hiperbolica`,'',hipergeometricTable) 
+  addToTheTable(`Distribucion hiperbolica:`,'',hipergeometricTable) 
 
   let hiperbolicValue
   let countValues = 1;   
   for(hiperbolicValue of hiperbolicArrayValues){
-    addToTheTable(`Porcentaje de exito del combo ${countValues}`,`${hiperbolicValue}%`,hipergeometricTable)    
+    addToTheTable(`% de exito, combo ${countValues} :`,`${hiperbolicValue}%`,hipergeometricTable)    
     countValues++;    
   } 
 }
@@ -89,9 +89,9 @@ async function rawAnalisis(combo , bricks, numberOfIterations, fatherArray, chil
  
   $("#p").html(deadHands);
 
-  addToTheTable(`Porcentaje de manos con 1 combo como minimo`,(100-((100*deadHands)/numIterations))+'%', table);
-  addToTheTable(`Porcentaje de manos muertas`,((100*deadHands)/numIterations)+'%', table);
-  addToTheTable(`Porcentaje de manos con bricks`,(100-((100*brickHands)/numIterations))+'%', table);
+  addToTheTable(`% de manos con 1 combo(min):`,(100-((100*deadHands)/numIterations))+'%', table);
+  addToTheTable(`% de manos muertas:`,((100*deadHands)/numIterations)+'%', table);
+  addToTheTable(`% de manos con bricks:`,(100-((100*brickHands)/numIterations))+'%', table);
   
   brickImagesIndividualResult.innerHTML="";
   combosImagesIndividualResult.innerHTML="";
@@ -100,7 +100,7 @@ async function rawAnalisis(combo , bricks, numberOfIterations, fatherArray, chil
 
     for(numberOfIndividualComboOcurrencies of comboArrayRegister){      
       positionOfIndividualCombo = comboArrayRegister.indexOf(numberOfIndividualComboOcurrencies);
-      addCardImageToTheTable(`Combo ${positionOfIndividualCombo+1}`,combo[positionOfIndividualCombo],'Porcentaje: '+[(numberOfIndividualComboOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualComboOcurrencies+'/'+originalNumberOfIterations]+']', combosImagesIndividualResult)
+      addCardImageToTheTable(`Combo ${positionOfIndividualCombo+1}`,combo[positionOfIndividualCombo],'%: '+[(numberOfIndividualComboOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualComboOcurrencies+'/'+originalNumberOfIterations]+']', combosImagesIndividualResult)
     }
   }
   
@@ -110,7 +110,7 @@ async function rawAnalisis(combo , bricks, numberOfIterations, fatherArray, chil
 
     for(numberOfIndividualBrickOcurrencies of brickArrayRegister){      
       positionOfIndividualBrick = brickArrayRegister.indexOf(numberOfIndividualBrickOcurrencies);
-      addCardImageToTheTable(`Brick ${positionOfIndividualBrick+1}`,bricks[positionOfIndividualBrick],'Porcentaje: '+[(numberOfIndividualBrickOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualBrickOcurrencies+'/'+originalNumberOfIterations]+']', brickImagesIndividualResult) 
+      addCardImageToTheTable(`Brick ${positionOfIndividualBrick+1}`,bricks[positionOfIndividualBrick],'%: '+[(numberOfIndividualBrickOcurrencies*100)/originalNumberOfIterations]+'%'+'['+[numberOfIndividualBrickOcurrencies+'/'+originalNumberOfIterations]+']', brickImagesIndividualResult) 
     }
   } 
 }

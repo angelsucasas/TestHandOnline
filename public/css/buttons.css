@@ -13,7 +13,7 @@
     height: 30px;
     font-size: 20px;    
     border-radius: 15px;
-    background-color: red;    
+    background-color: #ff5020;  
 }
 .btn-circle.btn-lg {
     width: 50px;
@@ -125,23 +125,34 @@ html, body {
 .delete-card{
     /*float: right;*/
     cursor: pointer;
-    color: red;
+    color: #ff5020;
     font-weight: bold;
 }
 
 .delete-card:hover {
     /*float: right;*/
     cursor: pointer;
-    color: red;
+    color: #ff5020;
     font-weight: bold;
 }
 
 .delete-ajust{
-    padding-right:10px;
-    padding-top:2px;
+    padding-right:1vw;
+    padding-top:1vh;
+    color: white;
 }
 
 .trash-icon-ajust{
     margin-left: -8px;
     top:-3px;
+}
+
+.redButton{
+    background-color: rgb(241, 74, 74);
+    color: black;
+}
+
+.greenButton{
+    background-color: yellowgreen;
+    color: black;
 }

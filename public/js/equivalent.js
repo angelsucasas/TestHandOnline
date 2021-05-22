@@ -12,7 +12,7 @@ function addNewEquivalentBox(){
 	let row = document.createElement('div');
 	addClass(row,'row animate__animated animate__fadeInLeft');
 	let md3 = document.createElement('div');
-	addClass(md3,'col-md-3');
+	addClass(md3,'col-lg-4 col-md-4 col-sm-4 col-xs-5 nopaddings');
 	let lilParal = document.createElement('div');
 	addClass(lilParal,'litle-parallelogram');
 	let column = document.createElement('div');
@@ -24,17 +24,24 @@ function addNewEquivalentBox(){
 	let longActive = document.createElement('div');
 	addClass(longActive,'item active');
 	let md9 = document.createElement('div');
-	addClass(md9,'col-md-9');
+	addClass(md9,'col-lg-8 col-md-8 col-sm-8 col-xs-7 nopaddings');
 	let paral = document.createElement('div');
 	addClass(paral,'parallelogram');
+
+	let containerFluid = document.createElement('div');
+	addClass(containerFluid,'container-fluid');
+	let containerFluid2 = document.createElement('div');
+	addClass(containerFluid2,'container-fluid');
+	let row2 =document.createElement('div');	
+	addClass(row2,'row');
 
 	let secondRow = document.createElement('div')
 	addClass(secondRow,'row');
 	let md8 = document.createElement('div')
-	addClass(md8,'col-md-8')
+	addClass(md8,'col-lg-8 col-md-8 col-sm-8 col-xs-11 nopaddings')
 
 	let md4 = document.createElement('div')
-	addClass(md4,'col-md-4')
+	addClass(md4,'col-lg-4 col-md-4 col-sm-4 col-xs-1 nopaddings')
 
 	let hr1 = document.createElement('hr')
 	addClass(hr1,'equivalentMark')
@@ -52,8 +59,10 @@ function addNewEquivalentBox(){
 	md4.appendChild(hr1)
 	md4.appendChild(hr2)
 	secondRow.appendChild(md4);
-
-	md3.appendChild(secondRow);
+	
+	containerFluid.appendChild(secondRow);
+	//-----
+	md3.appendChild(containerFluid);
 	row.appendChild(md3);
 
 	column.addEventListener('dragstart', handleDragStart, false);
@@ -66,7 +75,9 @@ function addNewEquivalentBox(){
     longActive.id = "comboEquivalentChild"
     longColumn.appendChild(longActive);
 	paral.appendChild(longColumn);
-	md9.appendChild(paral);
+	row2.appendChild(paral);
+	containerFluid2.appendChild(row2);	
+	md9.appendChild(containerFluid2);
 	row.appendChild(md9);
 
 	td.appendChild(row);

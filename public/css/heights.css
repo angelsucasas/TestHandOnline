@@ -4,16 +4,16 @@
 	bottom: 0;
 	left: 0;
 	right: 0; 
-	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	background-image: linear-gradient(to top, #310455 0%, #B176F9 100%);
 }
 
 .second-step{
-	height: 125vh ;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0; 
-	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	background-image: linear-gradient(to top, #B176F9 0%, #310455 100%);
+	overflow: auto;
 }
 
 .third-step{
@@ -22,7 +22,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0; 
-	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	background-image: linear-gradient(to top, #310455 0%, #B176F9 100%);
 }
 
 .vr{       

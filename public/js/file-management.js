@@ -58,7 +58,7 @@ function readFile(cont){
             }
         }
         
-    }
+    }  
   extraDeck = extraDeck.slice(1);  
-  sideDeck = sideDeck.slice(1);   
+  sideDeck = sideDeck.slice(1);  
 }     

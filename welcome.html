@@ -1,880 +1,851 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="./public/testhandLogoFinal.png" />
-  <title>TestHand Online</title>
-
-  
-  <meta 
-    name="csrf-token" 
-    content="{{ csrf_token() }}"
-  >
-
-  <!--bootstrap-->
-  <link 
-    rel="stylesheet" 
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"    
-  />
-    
-  <link
-    rel="stylesheet"
-    href="./public/css/animate.min.css"
-  />  
-
-    <script 
-    src="./public/js/jquery.min.js"
-  ></script>
-  <script 
-    src="./public/js/bootstrap.min.js"
-  ></script>
-
-  <!-- Fonts -->
-  <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"    
-  />  
-
-  <!-- Styles -->
-  <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
-  <link href="./public/css/steps.css" rel="stylesheet" type="text/css" />
-  <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
-  <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
-  <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />       
-  <link href="./public/css/heights.css" rel="stylesheet" type="text/css" />
-  <link href="./public/css/paralelogram.css" rel="stylesheet" type="text/css" /> 
-
-</head>
-<body >
-   <div 
-      class="content full-height second-step" 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
+    <link rel="shortcut icon" href="./public/testhandLogoFinal.png" />
+    <title>TestHand Online</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./public/css/animate.min.css"/>
+    <script src="./public/js/jquery.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
+    <link href="./public/css/buttons.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/steps.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/dragAndDrop.css" rel="stylesheet" type="text/css"/>
+    <link href="./public/css/carrousel.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/columns.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/heights.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/paralelogram.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/responsiveAdjust.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div 
+      class="container-fluid second-step nopaddings" 
+      style=" height: 100vh;"
       id="heighControl"
-    >           
-      <div id="mainContainer" class="container">
-      <div  id="logo" class="row logoPadding animate__animated animate__flip">        
-          <img src="./public/testhandLogoFinal.png" class="logoSize">
-      </div>  
-      <div id="fisrtRow" class="row">
-        <div class="col-md-12">  
-          <div class="stepwizard" style="margin-left: 22vw;">
-            <div class="stepwizard-row setup-panel">
-               <div class="stepwizard-step">
-                  <a href="#step-1" 
-                     type="button" 
-                     class="btn btn-primary btn-circle"
-                     >
-                  <img 
-                     class="btn-circle-start"
-                     src="./public/upload.png"                      
-                     height="100%" 
-                     >
-                  </a>
-                  <p style="color:white">Paso 1</p>
-               </div>
-               <div class="stepwizard-step">
-                  <a 
-                     href="#step-2" 
-                     type="button" 
-                     class="btn btn-default btn-circle" 
-                     disabled="disabled"                     
-                     >
-                  <img 
-                     class="btn-circle-start"
-                     src="./public/cardIcon.jpeg" 
-                     width="20px"
-                     >
-                  </a>
-                  <p style="color:white">Paso 2</p>
-               </div>
-               <div class="stepwizard-step">
-                  <a 
-                     href="#step-3" 
-                     type="button" 
-                     class="btn btn-default btn-circle" 
-                     disabled="disabled"
-                     >
-                  <img 
-                     class="btn-circle-end"
-                     src="./public/results4.png" 
-                     width="15px"
-                     >
-                  </a>
-                  <p style="color:white">Paso 3</p>
-               </div>
-               <div class="stepwizard-step">
-                  <a 
-                     href="#step-4" 
-                     type="button" 
-                     class="btn btn-default btn-circle" 
-                     disabled="disabled"
-                     >
-                  <img 
-                     class="btn-circle-end"
-                     src="./public/results4.png" 
-                     width="15px"
-                     >
-                  </a>
-                  <p style="color:white">Paso 4</p>
-               </div>
-            </div>
-          </div>        
-        </div>
-      </div>               
-         <div 
-            class="row setup-content" 
-            id="step-1"            
-            >
-            <div class="col-md-12 animate__animated animate__fadeInLeft" style="height: 45vh; min-height: 200px;">
-              <h3 style="color:white"> Paso 1: sube el archivo .ydk</h3>
-              <form             
-                 enctype="multipart/form-data"
-                 id="testForm"
-                 >               
-                 <div align="center" class="row">
-                    <p 
-                       align="center" 5
-                       class="input-column"
-                    >
-                       <input 
-                          id="input"
-                          style="padding-top:20px;padding-left: 5px;color: white;"
-                          name="deck" 
-                          type="file"
-                        >                      
-                    </p>
-                    <p><button  
-                      id="pruebita2"
-                      style="
-                        margin-top:10px;
-                        background: rgb(2,0,36);
-                        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,0,180,1) 54%, rgba(111,0,255,1) 100%);
-                        color: white;"
-                      class="btn btn-primary nextBtn btn-lg " 
-                      type="submit"
-                      >Siguiente Paso</button>
-                    </p>
-                 </div>
-              </form>
-            </div>  
-            <hr>
-            <hr>
-            <div 
-               class="row"
-               >
-               <div 
-                  class="col-lg-12 col-sm-12 col-xs-12"
-                  >
-                  <div 
-                     class="links"
-                     > 
-                     <a 
-                        href="https://github.com/angelsucasas"
-                        style="color:white"
-                        >Video Tutorial
-                     </a>                                            
-                      <i class="vr"></i>
-                      <a 
-                        href="https://github.com/angelsucasas"
-                        style="color:white"
-                        >Angel Sucasas
+      >
+      <nav 
+        style="
+          background-color: white; 
+          width: 100%; 
+          height: 5em;
+          z-index:2;
+          overflow-x: hidden;
+          overflow-y: hidden;"
+        >
+        <div class="container-fluid" style="height: 100%;">
+          <div class="row" style="height: 100%;">
+            <div align="center"class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopaddings" style="height: 100%;">
+              <div  class="stepwizard" style="height: 100%;">
+                <div class="stepwizard-row setup-panel" style="height: 100%;">
+                  <div class="stepwizard-step" style="height: 100%;">
+                    <a
+                      href="#step-1"
+                      id="firstStep"><!--Para que funcione tienes que ponerlo dentro de los paso-->
+                        <img src="./public/testhandLogo.png" style="height: 4em;width: 3em;">
                       </a>
-                      <a 
-                        href="https://github.com/angelsucasas"
-
-                        ><span class="glyphicon glyphicon-envelope" style="color:white;font-size:20px"></span>
-                      </a>
-                     <a 
-                        href="https://www.linkedin.com/in/%C3%A1ngel-alejandro-sucasas-goncalves-1829871b0/"
-                        ><i class="fa fa-linkedin-square" style="color:white;font-size:24px"></i>
-                     </a>  
-                     <i class="vr"></i>
-                     <a 
-                        href="https://github.com/angelsucasas"
-                        style="color:white"
-                        ><img src="./public/r-connections.png" style="width: 50px;" >
-                      </a>                
                   </div>
-               </div>
-            </div>
-         </div>
-         <div 
-            class="row setup-content animate__animated animate__fadeInLeft" 
-            id="step-2"                       
-            >
-            <button 
-              class="sideElementToScreen"
-              style="top:55px;"
-              id="changeToMainDeck"              
-            >
-                <p 
-                  class="verticalWrite"                  
-                >Main</p>
-              </button>
-            <button 
-              class="sideElementToScreen"
-              style="top:155px;"
-              id="changeToExtraDeck" 
-            >
-                <p 
-                  class="verticalWrite"                    
-                >Extra</p>
-            </button>
-            <button 
-              class="sideElementToScreen"
-              style="top:255px;"
-              id="changeToSideDeck"
-            >
-              <p 
-                class="verticalWrite"                     
-              >Side</p>
-            </button>
-            <h3 id="test3" style="color:white"> Paso 2: Agrega los combos y las cartas del combo</h3>
-            <div class="row">
-               <div class="col-md-7">
-                  <div id="mainDeckDiv" class="big-column">
-                     <!--The main Deck goes here-->
-                  </div> 
                 </div>
-                  <div 
-                     class="col-md-2"            
-                     >
-                      <div 
-                        style="height: 50px;width: 220px;"
-                        >            
-                            <a 
-                              href="#carousel-example-generic" 
-                              role="button" 
-                              data-slide="prev"
-                            > 
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:55px; height: 50px;left:10px"
-                            >                                          
-                                <span 
-                                  style="top:25%;left:20%"
-                                  class="glyphicon glyphicon-chevron-left" 
-                                  aria-hidden="true"
-                                ></span>
-                                                                                     
-                            </div>
-                            </a> 
-
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:60px; height: 50px;left:8px;"
-                              id="addCombo"
-                            >
-                                 <button
-                                    class="btn btn-success btn-xl"
-                                    style="
-                                      width: 220%;
-                                      height: 100%;                                      
-                                      margin-left:-15px
-                                    "
-                                    >
-                                 <i style=""
-                                    class="glyphicon glyphicon-plus"
-                                    ></i>
-                                 </button>  
-                                                                                     
-                            </div>
-                          
-                          <a 
-                            href="#carousel-example-generic" 
-                            role="button" 
-                            data-slide="next"
-                          >
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:50px; height: 50px;left:5px"
-                            >                            
-                              <span 
-                                style="top:25%;left:5%"
-                                class="glyphicon glyphicon-chevron-right" 
-                                aria-hidden="true"
-                              ></span>
-                            </div>
-                          </a>
-                                                                               
-                      </div>
-                      <div 
-                        class="#columns column"
-                        >                      
-                        <div 
-                           id="carousel-example-generic" 
-                           class="carousel slide" 
-                           data-ride="carousel"  
-                           data-interval="false"                                          
-                           >
-                           <div 
-                              class="carousel-inner" 
-                              role="listbox"
-                              id="comboCarrousel"
-                              >                              
-                              <div 
-                                 class="item active" 
-                                 >
-                                 <div 
-                                    class="#columns column comboBox"
-                                    >
-                                    <div 
-                                       class="delete-ajust" 
-                                       align="right"
-                                       >                                       
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                       >                                       
-                                        <div 
-                                          class="item"
-                                          id="comboCards"> 
-                                        </div>                                                                                  
-                                    </div>
-                                 </div>                                                                
-                              </div>
-                              <div class="item">
-                                 <div 
-                                    class="#columns column comboBox"
-                                    >
-                                    <div class="delete-ajust" align="right">
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                       >            
-                                        <div 
-                                          class="item"
-                                          id="comboCards"
-                                        > 
-                                        </div>               
-                                    </div>
-                                 </div>    
-                              </div>
-                              <div 
-                                class="item"                                
-                              >  
-                                                                                            
-                              </div>
-                           </div>
-                           <!-- Controls -->                           
-                           
-                        </div>
-                     </div>
-                  </div>
-                  <div 
-                     class="col-md-3"
-                     style="padding-left: 50px;"                                
-                     >
-                      <div 
-                        style="height: 50px"                        
-                        >
-                        <div class="row"> 
-                            <a href="#brick-carousel" role="button" data-slide="prev">                          
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:60px; height: 50px;left:10px"
-                            >            
-                                
-
-                                <span 
-                                  style="top:25%;left:20%"
-                                  class="glyphicon glyphicon-chevron-left" 
-                                  aria-hidden="true"
-                                ></span>
-                                                                                     
-                            </div>
-                            </a> 
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:100px; height: 50px;left:8px;"
-                              id="addBrick"
-                            >
-                                 <button
-                                    class="btn btn-success btn-xl"
-                                    style="
-                                      width: 146%;
-                                      height: 100%;                                      
-                                      margin-left:-15px
-                                    "
-                                    >
-                                 <i style=""
-                                    class="glyphicon glyphicon-plus"
-                                    ></i>
-                                 </button>  
-                                                                                     
-                            </div>
-                          
-                          <a href="#brick-carousel" role="button" data-slide="next">
-                            <div 
-                              class="#columns column col-md-4"
-                              style="width:60px; height: 50px;left:5px"
-                            >                            
-                              <span 
-                                style="top:25%;left:5%"
-                                class="glyphicon glyphicon-chevron-right" 
-                                aria-hidden="true"
-                                ></span>                                
-                              
-                            </div>
-                          </a>
-                        </div>                                                      
-                      </div>
-                      <div 
-                        class="#columns column"
-                        >                      
-                        <div 
-                           id="brick-carousel" 
-                           class="carousel slide" 
-                           data-ride="carousel"  
-                           data-interval="false"                                          
-                           >
-                          
-                           <!-- Wrapper for slides -->
-                           <div 
-                              class="carousel-inner" 
-                              role="listbox"
-                              id="comboBrick"
-                              >                              
-                              <div 
-                                 class="item active" 
-                                 >
-                                 <div 
-                                    class="#columns column brickBox"
-                                    >
-                                    <div 
-                                       class="delete-ajust" 
-                                       align="right"
-                                       >
-                                       Brick
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                       >                                       
-                                        <div 
-                                          class="item"
-                                          id="comboBrick"> 
-                                        </div>                                                                                  
-                                    </div>
-                                 </div>                                                                
-                              </div>
-                              <div class="item">
-                                 <div 
-                                    class="#columns column brickBox"
-                                    >
-                                    <div class="delete-ajust" align="right">Brick
-                                       <button                                         
-                                          type="click" 
-                                          class="btn btn-circle-delete  btn-xl"
-                                          >
-                                       <i
-                                          class="trash-icon-ajust glyphicon glyphicon-trash"
-                                          ></i>
-                                       </button>  
-                                    </div>
-                                    <div 
-                                       class="special-col"
-                                       >            
-                                        <div 
-                                          class="item"
-                                          id="comboBrick"
-                                        > 
-                                        </div>               
-                                    </div>
-                                 </div>    
-                              </div>
-                              <div 
-                                class="item"                                
-                              >  
-                                <div 
-                                   class="#columns column brickBox"        
-                                   >
-                                   <div 
-                                      class="delete-ajust" 
-                                      align="right"
-                                      >brick 1
-                                      <button                                         
-                                         type="click" 
-                                         class="btn btn-circle-delete  btn-xl"
-                                         >
-                                      <i
-                                         class="trash-icon-ajust glyphicon glyphicon-trash"
-                                         ></i>
-                                      </button>  
-                                   </div>
-                                   <div 
-                                      class="special-col"
-                                      >                                       
-                                        <div 
-                                         class="item"
-                                         id="brick"
-                                        > 
-                                       </div>                                                                                  
-                                   </div>
-                                </div>
-                                <div 
-                                  class="#columns column brickBox"                                    
-                                >
-                                   <div 
-                                      class="delete-ajust" 
-                                      align="right"
-                                      > brick 2
-                                      <button                                         
-                                         type="click" 
-                                         class="btn btn-circle-delete  btn-xl"
-                                         >
-                                      <i
-                                         class="trash-icon-ajust glyphicon glyphicon-trash"
-                                         ></i>
-                                      </button>  
-                                   </div>
-                                   <div 
-                                      class="special-col"
-                                      >                                       
-                                        <div 
-                                          class="item "
-                                          id="brick"
-                                        > 
-                                       </div>                                                                                  
-                                   </div>
-                                </div>
-                                <div 
-                                   class="#columns column brickBox"   
-                                >
-                                   <div 
-                                      class="delete-ajust" 
-                                      align="right"
-                                      >brick 3
-                                      <button                                         
-                                         type="click" 
-                                         class="btn btn-circle-delete  btn-xl"
-                                         >
-                                      <i
-                                         class="trash-icon-ajust glyphicon glyphicon-trash"
-                                         ></i>
-                                      </button>  
-                                   </div>
-                                   <div 
-                                      class="special-col"
-                                      >                                       
-                                        <div 
-                                          class="item"
-                                          id="brick"
-                                        > 
-                                       </div>                                                                                  
-                                   </div>
-                                </div>                                                            
-                              </div>
-                           </div>                          
-                        </div>
-                     </div>
-                  </div>                  
-               
+              </div>
             </div>
-            <hr>            
-            <div align="center" class="container-fluid">
-              <div class="row">
-                <div class="col-md-8">
-                  <label style="color:white">Indique el numero de veces que desea que se ejecute la prueba</label>                  
-                    <select name="iterations" id="iterations">
-                      <option value="1000">1000</option>
-                      <option value="10000">10000</option>
-                      <option value="100000">100000</option>
-                      <option value="1000000">1000000</option>
-                    </select>                   
-                </div> 
-                <div class="col-md-4">
-                  <button                      
-                    style="margin-top:5px;"
-                    class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
-                    type="button" 
-                  >Siguiente Paso
-                  </button>
-                </div>                         
-              </div>               
-            </div>
-         </div>
-         <br>
-         <br>
-         <div 
-            class="row setup-content animate__animated animate__fadeInLeft" 
-            id="step-3"
-          >
-              <button 
-                class="sideElementToScreen"
-                style="top:55px;"
-                id="changeToMainDeck2"              
-              >
-                <p 
-                  class="verticalWrite"                  
-                >Main</p>
-              </button>
-              <button 
-                class="sideElementToScreen"
-                style="top:155px;"
-                id="changeToExtraDeck2" 
-              >
-                <p 
-                  class="verticalWrite"
-                >Extra</p>
-              </button>
-              <button 
-                class="sideElementToScreen"
-                style="top:255px;"
-                id="changeToSideDeck2"
-              >
-                <p 
-                  class="verticalWrite"
-                >Side</p>
-              </button>
-              <h3 
-                id="test3" 
-                style="color:white"
-              > Paso 3: Agrega las equivalencias</h3>
-                <div class="row">
-                  <div class="col-md-7">
-                    <div id="mainDeckDiv2" class="big-column">
-                      <!--The main Deck goes here-->
-                    </div> 
-                  </div>
-                  <div 
-                    class="col-md-5"            
-                  >
-                    <div 
-                       class="table-responsive equivalent-column"
-                       >
-                       <table 
-                          class="table table-bordred"
-                          >
-                          <tbody id="equivalentTable">
-                            <tr>
-                              <td>
-                                <div 
-                                  class="row"
-                                >
-                                  <div 
-                                    class="col-md-3"                        
-                                  >
-                                  <div class="row">
-                                    <div class="col-md-8">
-                                      <div 
-                                        class="litle-parallelogram"
-                                      >
-                                        <div 
-                                            class="#columns column equivalentColumn normalDegree"
-                                        >
-                                          <div
-                                            id="comboEquivalentFather"
-                                            class="item active"
-                                          >                                          
-                                          </div>
-                                        </div>                          
-                                      </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                      <hr 
-                                        class="equivalentMark"
-                                      > 
-                                      <hr 
-                                        class="equivalentMark"
-                                      >  
-                                    </div>
-                                  </div>
-                                  </div>
-                                  <div 
-                                    class="col-md-9"
-                                  >                
-                                    <div                            
-                                      class="parallelogram"                            
-                                    >
-                                      <div 
-                                          class="#columns column equivalentColumn normalDegree"
-                                      >
-                                        <div
-                                          id="comboEquivalentChild"
-                                          class="item active"
-                                        >
-                                          
-                                        </div>
-                                      </div>    
-                                    </div>
-                                  </div>                
-                                </div> 
-                              </td>
-                            </tr>
-                            <tr id="addANewEquivalentBoxTr">
-                              <td>
-                                <button
-                                  class="btn btn-success btn-xl"
-                                  id="addANewEquivalentBox"
-                                  style="
-                                    width: 100%;
-                                    height: 100%;                                    
-                                  "
-                                >
-                                  <i
-                                    class="glyphicon glyphicon-plus"
-                                  ></i>
-                                </button>
-                              </td>
-                            </tr>             
-                          </tbody>
-                       </table>
+            <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopaddings" style="height: 100%;">
+              <div class="container-fluid nopaddings">
+                <div class="row nopaddings" style="padding-top: 1.5em;">
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopaddings">
+                    <div  class="stepwizard" style="height: 100%;">
+                      <div class="stepwizard-row setup-panel" style="height: 100%;">
+                        <div class="stepwizard-step" style="height: 100%;">
+                          <a
+                            href="#step-1"
+                            id="firstStep"
+                            style="position: relative; top: 38%;font-weight: bold;"><!--Para que funcione tienes que ponerlo dentro de los paso-->
+                              Home
+                            </a>
+                        </div>
+                      </div>
                     </div>
-                </div>                  
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopaddings"> 
+                      Tutorial
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopaddings"> 
+                      Contact us
+                  </div>
+                </div>
+              </div> 
             </div>
-            <div align="center" class="container-fluid">
-              <button  
-                id="pruebita"
-                style="margin-top:5px;"
-                class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
-                type="button" 
-              >Siguiente Paso
-              </button>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="height: 100%;">
+              <div class="container-fluid stepwizard" style="height: 100%;">
+                <div  class="stepwizard" style="height: 100%;padding-top: 1.5em;width: 100%;">
+                  <div class="stepwizard-row setup-panel" style="height: 100%;width: 100%;">
+                    <div class="stepwizard-step" style="height: 100%;">
+                      <a href="#step-1" 
+                        type="button" 
+                        class="btn-primary"
+                        id="firstStep"
+                        >
+                        Paso 1
+                      </a>
+                    </div>
+                    <div class="stepwizard-step" style="height: 100%;">
+                      <a 
+                        href="#step-2" 
+                        type="button"                        
+                        disabled="disabled"
+                        id="SecondStep"                 
+                        >
+                        Paso 2
+                      </a>
+                      
+                    </div>
+                    <div class="stepwizard-step" style="height: 100%;">
+                      <a 
+                        href="#step-3" 
+                        type="button"                         
+                        disabled="disabled"
+                        id="ThirdStep"
+                        >
+                        Paso 3
+                      </a>
+                      
+                    </div>
+                    <div class="stepwizard-step" style="height: 100%;">
+                      <a 
+                        href="#step-4" 
+                        type="button"
+                        disabled="disabled"
+                        id="FourthStep"
+                        >
+                        Paso 4
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-         <div 
-            class="row setup-content animate__animated animate__fadeInLeft" 
-            id="step-4"
-            >
-            <h3 style="color:white"> Paso 4: Resultado de las pruebas</h3>
-            <div class="row"> 
-                <div class="col-md-9">  
-                    <div 
-                       class="table-responsive result-column"
-                       >
-                       <table 
-                          class="table table-bordred"
-                          >
-                          <tbody id="mytable" style="color:black">
-                          </tbody>
-                       </table>
-                    </div> 
-                </div>
-                <div class="col-md-3">  
-                  <div 
-                     class="table-responsive result-column"
-                     >
-                     <table 
-                        class="table table-bordred "
+        </div>
+      </nav>
+      <button 
+        class="sideElementToScreen hideElement"
+        style="top:10em;z-index: 3;"
+        id="changeToMainDeck"              
+        >
+        <p 
+          class="verticalWrite"                  
+          >Main</p>
+      </button>
+      <button 
+        class="sideElementToScreen hideElement"
+        style="top:17em;z-index: 3;"
+        id="changeToExtraDeck" 
+        >
+        <p 
+          class="verticalWrite"                    
+          >Extra</p>
+      </button>
+      <button 
+        class="sideElementToScreen hideElement"
+        style="top:24em;z-index: 3;"
+        id="changeToSideDeck"
+        >
+        <p 
+          class="verticalWrite"                     
+          >Side</p>
+      </button>    
+      <div id="mainContainer" class="container-fluid nopaddings">
+        <div class="setup-content nopaddings" id="step-1">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 nopaddings" style="height: 100%">
+            <div class="container-fluid">
+              <div id="logo" class="row animate__animated animate__fadeInLeft animate__slower" style="height: 100%;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 100%;">
+                  <img src="./public/testhandLogo.png" class="logoSize" style="padding-top: 14vw;">
+                </div>        
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="height: 100%;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h1 align="center" style="color:white; font-size: 6vw; font-weight: bold;margin-top: 2.4em;">
+                    <p>¡Consistencia en</p>
+                    <p>3 simples pasos!</p>
+                  </h1>
+                  <h3 
+                    style="
+                      color:white; 
+                      font-size: 1.3em;
+                      padding-left: 1em;
+                      padding-top: .7em;"
+                    > Sube el archivo .ydk de tu mazo para comenzar:</h3>
+                  <div class="row" style="margin-left:1.2em; margin-top: 2.5em;margin-bottom: 2em;">
+                    <form             
+                      enctype="multipart/form-data"
+                      id="testForm"
+                      >
+                        <div 
+                          class="col-lg-6 col-md-6 col-sm-6 col-xs-12"
+                          style="margin-bottom: 1em;">
+                          <input 
+                            id="input"
+                            style="padding: 1.09em;color: white;"
+                            name="deck" 
+                            type="file"
+                            class="input-column">     
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <button  
+                            id="pruebita2"
+                            style="
+                            height: 100%;
+                            background: #461B7B;                         
+                            color: white;
+                            padding:.7em;
+                            font-size: 1.3em;
+                            width: 100%;"
+                            class="btn btn-primary nextBtn btn-lg " 
+                            type="submit">
+                              Comenzar
+                          </button>                      
+                        </div>
+                    </form>
+                  </div>                
+                  <p>
+                    <h3 style="color: white;margin-left:1.3em;">
+                      <h3 id="TestModeText" 
+                      style="
+                        color: white; 
+                        margin-left: 1.2em;
+                        font-size: 1.3em;"
+                      >No tienes archivo .ydk? ¡activa el modo prueba!</h3>
+                      <div align="center" class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-1"></div>
+                        <div 
+                          class="col-lg-4 col-md-4 col-sm-4 col-xs-11"
+                          style="padding-left: 6em;"
                         >
-                        <tbody id="rawAnalisisResultImage" style="color:black">
-                        </tbody>
-                     </table>
-                  </div> 
+                          <button
+                            align="center" 
+                            class="btn btn-lg"                           
+                            id="activarModoPrueba"
+                            style="
+                              font-size:1.5rem;
+                              background: #461B7B;
+                              color: white;
+                              padding:1.1em;"
+                            >Activar modo prueba</button>
+                        </div>
+                      </div>
+                    </h3>
+                  </p>
                 </div>
-                <div class="col-md-6" style="padding-top: 10px">  
-                    <div                       
-                      class="table-responsive result-column"
+              </div>
+            </div>
+          </div>
+        </div>      
+        <!--***********************-->
+        <!--Second part-->
+        <!--***********************-->
+        <div 
+          class="row setup-content animate__animated animate__fadeInLeft" 
+          id="step-2"
+          style="padding-top: 5em;"
+          >
+            <div align="center" style="padding-bottom: 1em;">
+              <h3 id="test3" style="color:white"> Paso 2: Agrega las cartas que quieres ver!"</h3>
+            </div>          
+          <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+              <div id="mainDeckDiv" class="big-column">
+                <!--The main Deck goes here-->
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 nopaddings">
+                    <div style="width: 100%;">
+                      <a 
+                      href="#carousel-example-generic" 
+                      role="button" 
+                      data-slide="prev"
+                      style="width: 100%; height: 100%;"
+                      >
+                        <div 
+                          class="#columns"
+                          style="width:100%; height: 50px;"
+                          >                                          
+                          <span 
+                            style="top:25%;left:20%"
+                            class="glyphicon glyphicon-chevron-left" 
+                            aria-hidden="true"
+                            ></span>
+                        </div>
+                      </a>                  
+                    </div>                  
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopaddings">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <button
+                          class="btn"
+                          style="width: 100%;height: 50px; background-color: #a25edd;color: white;
+                          font-size: 1.1vw;z-index:3;"
+                          id="addCombo">Combo<i
+                          class="glyphicon glyphicon-plus"
+                          ></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 nopaddings">
+                    <div style="width: 100%;">
+                      <a 
+                      href="#carousel-example-generic" 
+                      role="button" 
+                      data-slide="next"
+                      >
+                        <div 
+                          class="#columns"
+                          style="width:100%; height: 50px"
+                          >                            
+                          <span 
+                            style="top:25%;left:25%"
+                            class="glyphicon glyphicon-chevron-right" 
+                            aria-hidden="true"
+                            ></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>               
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+
+                  <div 
+                    class="#columns column"
                     >
-                       <table 
-                          class="table table-bordred"
-                          >
-                          <tbody id="combosImagesIndividualResult" style="color:black">
-                          </tbody>
-                       </table>
-                    </div> 
-                </div>
-                <div class="col-md-6" style="padding-top: 10px">  
-                  <div 
-                     class="table-responsive result-column"
-                     >
-                     <table 
-                        class="table table-bordred "
-                        >
-                        <tbody id="brickImagesIndividualResult" style="color:black">
-                        </tbody>
-                     </table>
-                  </div> 
-                </div>
-                <div style="padding-top: 10px;"class="col-md-9">  
                     <div 
-                       class="table-responsive result-column"
-                       >
-                       <table 
-                          class="table table-bordred"
-                          >
-                          <tbody id="hipergeometricDistributionResult" style="color:black>
-                          </tbody>
-                       </table>
-                    </div> 
-                </div>
-                <div style="padding-top: 10px;" class="col-md-3">  
-                  <div 
-                     class="table-responsive result-column"
-                     >
-                     <table 
-                        class="table table-bordred"
+                      id="carousel-example-generic" 
+                      class="carousel slide" 
+                      data-ride="carousel"  
+                      data-interval="false"                                          
+                      >
+                      <div 
+                        class="carousel-inner" 
+                        role="listbox"
+                        id="comboCarrousel"
                         >
-                        <tbody id="hipergeometricDistributionImage" style="color:black">
-                        </tbody>
-                     </table>
-                  </div> 
+                        <div 
+                          class="item active combo" 
+                          >
+                          <div 
+                            class="#columns column comboBox"
+                            >
+                            <div 
+                              class="delete-ajust" 
+                              align="right"
+                              >                                       
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class=" special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="comboCards"> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div 
+                            class="#columns column comboBox"
+                            >
+                            <div class="delete-ajust" align="right">
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class=" special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="comboCards"
+                                > 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div 
+                          class="item"                                
+                          >  
+                        </div>
+                      </div>
+                      <!-- Controls -->                           
+                    </div>
+                  </div>
                 </div>
-            </div>                          
-         </div>          
-        </div>         
+              </div>
+            </div>            
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-3 nopaddings">
+                      <div style="width: 100%;">
+                        <a 
+                        href="#brick-carousel" 
+                        role="button" 
+                        data-slide="prev"
+                        style="width: 100%; height: 100%;"
+                        >
+                          <div 
+                            class="#columns"
+                            style="width:100%; height: 50px;"
+                            >                                          
+                            <span 
+                              style="top:25%;left:20%"
+                              class="glyphicon glyphicon-chevron-left" 
+                              aria-hidden="true"
+                              ></span>
+                          </div>
+                        </a>                  
+                      </div>                  
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopaddings">
+
+                      <button
+                        class="btn"
+                        style="width: 100%;height: 50px; background-color: #a25edd;color: white;
+                        font-size: 1.1vw;"
+                        id="addBrick"><i
+                        class="glyphicon glyphicon-plus"
+                        ></i>
+                      </button>
+                    
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 nopaddings">
+                      <div style="width: 100%;">
+                        <a 
+                        href="#brick-carousel" 
+                        role="button" 
+                        data-slide="next"
+                        >
+                          <div 
+                            class="#columns"
+                            style="width:100%; height: 50px"
+                            >                            
+                            <span 
+                              style="top:25%;left:25%"
+                              class="glyphicon glyphicon-chevron-right" 
+                              aria-hidden="true"
+                              ></span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>                
+                  </div>
+                </div>
+                <div class="container-fluid">
+                <div class="row">
+                  <div 
+                    class="#columns column"
+                    >
+                    <div 
+                      id="brick-carousel" 
+                      class="carousel slide" 
+                      data-ride="carousel"  
+                      data-interval="false"                                          
+                      >
+                      <!-- Wrapper for slides -->
+                      <div 
+                        class="carousel-inner" 
+                        role="listbox"
+                        id="comboBrick"
+                        >
+                        <div 
+                          class="item active" 
+                          >
+                          <div 
+                            class="#columns column brickBox"
+                            >
+                            <div 
+                              class="delete-ajust" 
+                              align="right"
+                              >
+                              Brick
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class="special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="comboBrick"> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div 
+                            class="#columns column brickBox"
+                            >
+                            <div class="delete-ajust" align="right">Brick
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class="special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="comboBrick"
+                                > 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div 
+                          class="item"                                
+                          >
+                          <div 
+                            class="#columns column brickBox"        
+                            >
+                            <div 
+                              class="delete-ajust" 
+                              align="right"
+                              >brick 1
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class="special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="brick"
+                                > 
+                              </div>
+                            </div>
+                          </div>
+                          <div 
+                            class="#columns column brickBox"                                    
+                            >
+                            <div 
+                              class="delete-ajust" 
+                              align="right"
+                              > brick 2
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class="special-col"
+                              >
+                              <div 
+                                class="item "
+                                id="brick"
+                                > 
+                              </div>
+                            </div>
+                          </div>
+                          <div 
+                            class="#columns column brickBox"   
+                            >
+                            <div 
+                              class="delete-ajust" 
+                              align="right"
+                              >brick 3
+                              <button                                         
+                                type="click" 
+                                class="btn btn-circle-delete  btn-xl"
+                                >
+                              <i
+                                class="trash-icon-ajust glyphicon glyphicon-trash"
+                                ></i>
+                              </button>  
+                            </div>
+                            <div 
+                              class="special-col"
+                              >
+                              <div 
+                                class="item"
+                                id="brick"
+                                > 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div align="center" class="col-lg-8 col-md-8 col-sm-8 col-xs-12">                  
+              <label  style="color:white;font-size: 1.6em;">¿Cuantas pruebas quiere?:</label>                  
+              <select name="iterations" id="iterations">
+                <option value="1000">1000</option>
+                <option value="10000">10000</option>
+                <option value="100000">100000</option>
+                <option value="1000000">1000000</option>
+              </select>
+            </div>
+            <div align="center" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <button                      
+                style="margin-top:5px;background-color: #461B7B;"                    
+                class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
+                type="button" 
+                >Siguiente Paso
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <br>
+        <br>
+        <div 
+          class="row setup-content animate__animated animate__fadeInLeft" 
+          id="step-3"
+          style="padding-top: 2em;"
+          >
+          <div class="container-fluid">
+          <button 
+            class="sideElementToScreen"
+            style="top:55px;"
+            id="changeToMainDeck2"              
+            >
+            <p 
+              class="verticalWrite"                  
+              >Main</p>
+          </button>
+          <button 
+            class="sideElementToScreen"
+            style="top:155px;"
+            id="changeToExtraDeck2" 
+            >
+            <p 
+              class="verticalWrite"
+              >Extra</p>
+          </button>
+          <button 
+            class="sideElementToScreen"
+            style="top:255px;"
+            id="changeToSideDeck2"
+            >
+            <p 
+              class="verticalWrite"
+              >Side</p>
+          </button>
+          <h3
+            align="center" 
+            id="test3" 
+            style="color:white"
+            > Paso 3: Agrega las equivalencias</h3>
+          <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+              <div id="mainDeckDiv2" class="big-column">
+                <!--The main Deck goes here-->
+              </div>
+            </div>            
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <div class="container-fluid">
+                <div class="row"> 
+                <div class="table-responsive equivalent-column" style="margin-top: 0; padding-top: 0;">
+                  <table class="table table-bordred">
+                    <tbody id="equivalentTable">
+                      <tr>
+                        <td>
+                          <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 nopaddings">
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-11 nopaddings">
+                                    <div class="litle-parallelogram">
+                                      <div class="#columns column equivalentColumn normalDegree">
+                                        <div
+                                          id="comboEquivalentFather"
+                                          class="item active"
+                                          >                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-1 nopaddings">
+                                    <hr class="equivalentMark">
+                                    <hr class="equivalentMark">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7 nopaddings">
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <div class="parallelogram">
+                                    <div class="#columns column equivalentColumn normalDegree">
+                                      <div id="comboEquivalentChild" class="item active">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="addANewEquivalentBoxTr">
+                        <td>
+                          <button
+                            class="btn btn-xl"
+                            id="addANewEquivalentBox"
+                            style="
+                            width: 50%;
+                            height: 100%;
+                            background: #a25edd;
+                            color: white;">
+                          <i
+                            class="glyphicon glyphicon-plus"
+                            ></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>                               
+                </div>
+              </div>
+            </div>
+          </div>
+          <div align="center" class="container-fluid">
+            <button  
+              id="pruebita"
+              style="margin-top:5px;background-color: #461B7B;"
+              class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg " 
+              type="button" 
+              >Siguiente Paso
+            </button>
+          </div>
+        </div>
+        </div>
+        <div 
+          class="row setup-content animate__animated animate__fadeInLeft" 
+          id="step-4"
+          >
+          <h3 align="center" style="color:white"> Paso 4: Resultado de las pruebas</h3>
+          <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+              <div class="table-responsive result-column" style="overflow-y: hidden;background-color: #a25edd;">
+                <table class="table table-bordred">
+                  <tbody id="mytable" style="color:black">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="padding-top: 10px">
+              <div                       
+                class="table-responsive result-column" style="overflow-y:scroll;background-color: #a25edd;"
+                >
+                <table 
+                  class="table table-bordred"
+                  >
+                  <tbody id="combosImagesIndividualResult" style="color:black">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="padding-top: 10px">
+              <div 
+                class="table-responsive result-column" style="overflow-y:scroll;background-color: #a25edd;"
+                >
+                <table 
+                  class="table table-bordred "
+                  >
+                  <tbody id="brickImagesIndividualResult" style="color:black">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div style="padding-top: 10px;" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+              <div 
+                class="table-responsive result-column" style="overflow-y:scroll;background-color: #a25edd;"
+                >
+                <table 
+                  class="table table-bordred"
+                  >
+                  <tbody id="hipergeometricDistributionResult" style="color:black">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+          </div>
+        </div>
       </div>
-   </div>
-   </div>
-</body>
-  <script 
-    src="./public/js/Card.js"
-  ></script>
-  <script 
-    src="./public/js/steps.js"
-  ></script>
-  <script 
-    src="./public/js/dragAndDrop.js"
-  ></script>
-  <script 
-    src="./public/js/dinamic-boxes.js"
-  ></script>
-  <script 
-    src="./public/js/cards-API.js"
-  ></script>
-  <script 
-    src="./public/js/class-manager.js"
-  ></script>
-  <script 
-    src="./public/js/file-management.js"
-  ></script>
-  <script 
-    src="./public/js/array-functions.js"
-  ></script>
-  <script 
-    src="./public/js/analitics-functions.js"
-  ></script>
-  <script 
-    src="./public/js/scrollMagic.js"
-  ></script>
-  <script 
-    src="./public/js/changeDeckDinamicly.js"
-  ></script>
-  <script 
-    src="./public/js/equivalent.js"
-  ></script>
+    </div>
+    <script src="./public/js/DragDropTouch.js"></script>
+  <script src="./public/js/Card.js"></script>
+  <script src="./public/js/steps.js"></script>
+  <script src="./public/js/dragAndDrop.js"></script>
+  <script src="./public/js/dinamic-boxes.js"></script>
+  <script src="./public/js/cards-API.js"></script>
+  <script src="./public/js/class-manager.js"></script>
+  <script src="./public/js/file-management.js"></script>
+  <script src="./public/js/array-functions.js"></script>
+  <script src="./public/js/analitics-functions.js"></script>
+  <script src="./public/js/scrollMagic.js"></script>
+  <script src="./public/js/changeDeckDinamicly.js"></script>
+  <script src="./public/js/equivalent.js"></script>
+  </body>
 </html>

@@ -15,8 +15,9 @@
 }
 
 .card {
-  height: 80px;
-  width: 60px;
+  height: 6.5rem;
+  width: 4.5rem;;
+  max-width: 12vw;
   float: left;
   border: 2px solid #666666;
   background-color: #ccc;
@@ -28,7 +29,9 @@
   -webkit-box-shadow: inset 0 0 3px #000;
   -ms-box-shadow: inset 0 0 3px #000;
   box-shadow: inset 0 0 3px #000;
-  text-align: center;  
+  text-align: center;
+  margin-left: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .card-combo {

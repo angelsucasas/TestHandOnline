@@ -6,9 +6,8 @@ class Card{
 }
 
 
-$(document).ready(function(){
-    console.log("sube")
-    $('.go-up').click(function(){
+/*$(document).ready(function(){
+    $('.go-up').on(function(){
         $('body, html').animate({
             scrollTop: '0px'
         }, 300);
@@ -21,7 +20,7 @@ $(document).ready(function(){
             $('.go-up').slideUp(300);
         }
     }); 
-});
+});*/
 
 $("#iterations").on("keypress", function(evt) {
   let keycode = evt.charCode || evt.keyCode;  

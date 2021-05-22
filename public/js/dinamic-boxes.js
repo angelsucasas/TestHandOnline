@@ -1,23 +1,23 @@
-
 const addComboButton = document.getElementById("addCombo")
 const addBrickButton = document.getElementById("addBrick")
 
-/** adds a new "combo box" in the active item in the carousel
- it is insert before the add button
-*/
+
 addComboButton.addEventListener("click",addCombo);
 addBrickButton.addEventListener("click",addBrick);
 
 
 function addBrick(){
-   mainCarousel = document.getElementById('brick-carousel');
-  let mainRow = mainCarousel.getElementsByClassName("item active");  
+  let mainCarousel1 = document.getElementById('brick-carousel');
+  let mainRow = mainCarousel1.getElementsByClassName("item active");  
   let originalActive = mainRow;
   let nextChildFlag = 0;
-  let childCount = 0;
+  let childCount = 0;  
+  for(i=0;i<originalActive.length;i++){    
+    originalActive[i].id="comboCards"? childCount++ : null
+  }
 
-  if(originalActive.length>=3){
-    alert("Se alcanzo el limite de cajas")
+  if(childCount>3){
+    alert("Se alcanzo el limite de cajas para bricks")
   }
   else{
     let mainColumn = document.createElement('div');
@@ -25,8 +25,7 @@ function addBrick(){
 
     let specialRow = document.createElement('div');
     addClass(specialRow,"special-col");
-    
-    //let newComboBox = document.createElement('span');
+        
     let activeItem = document.createElement('div');
     addClass(activeItem,"item active");
     activeItem.id = "comboBrick";
@@ -72,16 +71,19 @@ function addBrick(){
   }
 }
 
+/** adds a new "combo box" in the active item in the carousel
+ it is insert before the add button
+*/
 function addCombo(){
-  mainCarousel = document.getElementById('carousel-example-generic');
-  let mainRow = mainCarousel.getElementsByClassName("item active");  
-
+  let mainCarousel2 = $('#carousel-example-generic');  
+  let mainRow = mainCarousel2[0].getElementsByClassName("item active");  
+  
   let originalActive = mainRow;
   let nextChildFlag = 0;
   let childCount = 0;
-
-  if(originalActive.length==3){
-    alert("Se alcanzo el limite de cajas")
+  
+  if(originalActive.length>=3){
+    alert("Se alcanzo el limite de cajas para combos")
   }
   else{
     let mainColumn = document.createElement('div');
@@ -89,10 +91,9 @@ function addCombo(){
 
     let specialRow = document.createElement('div');
     addClass(specialRow,"special-col");
-    
-    //let newComboBox = document.createElement('span');
+        
     let activeItem = document.createElement('div');
-    addClass(activeItem,"item");
+    addClass(activeItem,"item active");
     activeItem.id ="comboCards"
 
     let deleteButton = document.createElement('div');
@@ -109,9 +110,6 @@ function addCombo(){
     button.appendChild(deleteIcon);
     deleteButton.appendChild(button);
 
-    deleteButton.addEventListener("click", function(e){ 
-     mainRow[0].removeChild(mainColumn)
-    }); 
 
     mainColumn.appendChild(deleteButton);
     specialRow.appendChild(activeItem);
@@ -122,7 +120,9 @@ function addCombo(){
               
     mainRow[0].appendChild(mainColumn)  
 
-    
+    deleteButton.addEventListener("click", function(e){
+      mainRow[0].removeChild(mainColumn)
+    });
 
     //como es un nuevo elemento, falta agregarle los eventListener 
     mainColumn.addEventListener('dragstart', handleDragStart, false);
@@ -139,14 +139,11 @@ function addCombo(){
 const deleteButtons = document.getElementsByClassName("btn-circle-delete");
 
 
-/*[].forEach.call(deleteButtons, function(del) {
-  console.log(del)
+[].forEach.call(deleteButtons, function(del) {  
   del.addEventListener("click", function(e){ 
       
       if(e.target.parentElement.parentElement.class="delete-ajust"){
         e.target.parentElement.parentElement.parentElement.parentElement.removeChild(e.target.parentElement.parentElement.parentElement)          
-      }
-      console.log(e.target.parentElement.parentElement.parentNode)
-      //e.target.parentElement.parentElement.parentElement.removeChild(e.target.parentElement.parentElement)      
+      }      
   });  
-});*/
+});
