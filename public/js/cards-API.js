@@ -108,14 +108,11 @@ function alignChildAndFathers(fathersCombo, childsCombo){
   return [fathersArray,childsArray]
 }
 
-
-let sendDeckButton = document.getElementById("testForm");
-
 function printCardDragables(deck,DeckDiv){
   [].forEach.call(deck, function (Card) {
     let cardImage = document.createElement('img');
     cardImage.setAttribute('draggable', true);  
-    cardImage.src =`./public/pics/${Card}.jpg`;
+    cardImage.src =`https://images.ygoprodeck.com/images/cards/${Card}.jpg`;
     cardImage.id = Card;
     addClass(cardImage,"#card card"); 
     DeckDiv.appendChild(cardImage);
@@ -126,7 +123,7 @@ function printCardNotDragables(deck,DeckDiv){
   [].forEach.call(deck, function (Card) {
     let cardImage = document.createElement('img');
     cardImage.setAttribute('draggable', false);       
-    cardImage.src =`./public/pics/${Card}.jpg`;
+    cardImage.src =`https://images.ygoprodeck.com/images/cards/${Card}.jpg`;
     cardImage.id = Card;
     addClass(cardImage,"#card card"); 
     DeckDiv.appendChild(cardImage);
@@ -142,6 +139,8 @@ function resetMainDivTable(mainDeckDiv){
 *
 *  then it inserts the img inside de "maindDeckDiv"
 */
+/*let sendDeckButton = document.getElementById("testForm");
+
 sendDeckButton.addEventListener('submit', function(event){
   event.preventDefault();  
     
@@ -151,7 +150,19 @@ sendDeckButton.addEventListener('submit', function(event){
 
   printCardDragables(deck,mainDeckDiv);
   printCardDragables(deck,mainDeck2)
+});*/
 
-});
+function startStep2(){
+  console.log("start step 2")
+  event.preventDefault();  
+    
+  let mainDeckDiv = document.getElementById('mainDeckDiv');
+  mainDeckDiv.innerHTML = "";
+  mainDeck2.innerHTML = "";
+  console.log(deck)
+
+  printCardDragables(deck,mainDeckDiv);
+  printCardDragables(deck,mainDeck2)
+}
 
 

@@ -217,7 +217,7 @@ function addCardImageToTheTable(columnTextLeft,imgSrcArray,columnTextRight, tabl
 
   for( imgSrc of imgSrcArray){
     let newImage = document.createElement('img');
-    newImage.src='./public/pics/'+imgSrc+'.jpg';
+    newImage.src='https://images.ygoprodeck.com/images/cards/'+imgSrc+'.jpg';
     addClass(newImage,'#card card')
     tr.appendChild(newImage);
   }
