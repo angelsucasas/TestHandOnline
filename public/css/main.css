@@ -1,0 +1,215 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y UTILIDADES
+   ========================================================================== */
+.full-viewport-height {
+  height: 100vh;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-black {
+  color: black !important;
+}
+
+/* ==========================================================================
+   MENÚ DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.custom-navbar {
+  background-color: white; 
+  width: 100%; 
+  height: 5em;
+  z-index: 2;
+  overflow: hidden;
+  margin-bottom: 0; 
+  border: none;
+}
+
+.nav-logo-img {
+  height: 4em;
+  width: 3em;
+}
+
+.navbar-nav-links {
+  padding-top: 1.5em;
+}
+
+.nav-home-link {
+  position: relative; 
+  top: 38%;
+  font-weight: bold;
+}
+
+.nav-wizard-container {
+  height: 100%;
+  padding-top: 1.5em;
+  width: 100%;
+}
+
+/* Botones Laterales Flotantes (Pasos 1 y 2) */
+.side-btn-main { top: 10em; z-index: 3; }
+.side-btn-extra { top: 17em; z-index: 3; }
+.side-btn-side { top: 24em; z-index: 3; }
+
+/* Botones Laterales Flotantes (Paso 3) */
+.side-btn-main-p3 { top: 55px; }
+.side-btn-extra-p3 { top: 155px; }
+.side-btn-side-p3 { top: 255px; }
+
+
+/* ==========================================================================
+   PASO 1: VISTA DE BIENVENIDA Y CARGA .YDK
+   ========================================================================== */
+.p1-logo-img {
+  padding-top: 14vw;
+}
+
+.p1-title {
+  color: white; 
+  font-size: 6vw; 
+  font-weight: bold;
+  margin-top: 2.4em;
+}
+
+.p1-subtitle {
+  color: white; 
+  font-size: 1.3em;
+  padding-left: 1em;
+  padding-top: .7em;
+}
+
+.p1-form-row {
+  margin: 2.5em 0 2em 1.2em;
+}
+
+.p1-input-wrapper {
+  margin-bottom: 1em;
+}
+
+.p1-file-input {
+  padding: 1.09em;
+  color: white;
+}
+
+.p1-submit-btn {
+  height: 100%; 
+  background-color: #461B7B;                         
+  color: white;
+  padding: .7em;
+  font-size: 1.3em; 
+  width: 100%;
+}
+
+.p1-test-mode-wrapper {
+  margin-left: 1.2em;
+}
+
+.p1-test-mode-text {
+  color: white; 
+  font-size: 1.3em;
+}
+
+.p1-test-mode-btn-container {
+  margin-top: 1.5em;
+}
+
+.p1-test-mode-btn {
+  font-size: 1.5rem; 
+  background-color: #461B7B; 
+  color: white; 
+  padding: 1.1em;
+}
+
+
+/* ==========================================================================
+   PASO 2: SECCIÓN DE COMBOS Y BRICKS
+   ========================================================================== */
+.p2-container {
+  padding-top: 5em;
+}
+
+.p2-header {
+  padding-bottom: 1em;
+}
+
+.p2-carousel-control-btn {
+  height: 50px; 
+  padding-top: 15px;
+}
+
+.p2-action-btn {
+  height: 50px; 
+  background-color: #a25edd;
+  color: white;
+  font-size: 1.1vw;
+  z-index: 3;
+}
+
+.p2-iterations-row {
+  margin-top: 20px;
+}
+
+.p2-select-iterations {
+  display: inline-block; 
+  width: auto;
+}
+
+.btn-purple-next {
+  background-color: #461B7B;
+  color: white;
+}
+
+
+/* ==========================================================================
+   PASO 3: EQUIVALENCIAS
+   ========================================================================== */
+.p3-container {
+  padding-top: 2em;
+}
+
+.p3-table-responsive {
+  margin-top: 0; 
+  padding-top: 0;
+}
+
+.p3-add-btn {
+  width: 50%; 
+  background-color: #a25edd; 
+  color: white;
+}
+
+.p3-next-btn-container {
+  margin-top: 20px;
+}
+
+
+/* ==========================================================================
+   PASO 4: RESULTADOS DE SIMULACIÓN
+   ========================================================================== */
+.p4-table-bg {
+  background-color: #a25edd;
+}
+
+.p4-subtables-row {
+  margin-top: 10px;
+}
+
+.p4-scrollable-table-container {
+  overflow-y: scroll; 
+  background-color: #a25edd; 
+  height: 250px;
+}
+
+.p4-scrollable-table-container-fluid {
+  overflow-y: scroll; 
+  background-color: #a25edd;
+}

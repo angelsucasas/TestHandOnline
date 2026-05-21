@@ -1,0 +1,167 @@
+.column.over {
+	border: 2px dashed #000;
+}
+
+.brickBox{
+	background: #a25edd;
+}
+
+.comboBox{
+	background: #a25edd;
+}
+
+.logoPadding{
+	/*padding-bottom: 10px;*/
+	padding-bottom: 1vh;
+	text-shadow: 2px 2px red;
+}
+
+.logoSize{
+	width: 100%; 
+	height: 50%;
+}
+
+.ComboBoxes{}
+
+.BrickBoxes{}
+
+.sideElementToScreen{
+	position: fixed;
+	left: 0; 
+	height: 100px;	
+	border-radius: 0px 10px 20px 0px;
+
+	background: #4e54c8;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.sideElementToScreen:hover{
+	width: 40px;
+}
+
+.verticalWrite{
+	color:white;
+	writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.special-col{
+	width: 100%;
+	height: 70%;
+	overflow-y: scroll;	
+}
+
+.long-column{
+	height: 250px;
+	width: 680px;
+	float: left;
+	border: 2px solid #666666;
+	/*background-color: #ccc;*/
+	margin-right: 5px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px #000;
+	-ms-box-shadow: inset 0 0 3px #000;
+	box-shadow: inset 0 0 3px #000;
+	text-align: center;  
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+.big-column {
+	height: 33em;/*520px;* 968?*/
+	width: 100%;/*680px; t:1349*/
+	float: left;
+	background: #a25edd;  /* fallback for old browsers */
+	margin: 0;
+	border-radius: 10px;
+	align-self: center;
+	text-align: center;  
+	padding-top: 25px;
+	overflow-y: scroll;
+}
+
+.column {
+	height: 9.5em;/*150px;*/
+	width: 100%;/*220px;*/
+	float: left;
+		
+	border-radius: 10px;
+
+	text-align: center;
+	cursor: move;
+	margin-top:5px;
+}
+.column:hover{
+	background-color: red;
+}
+
+.result-column{
+	height: 150px;
+	width: 100%;
+	float: left;
+	border: 2px solid #666666;
+	
+	border-radius: 10px;
+	
+	text-align: center;  
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+
+.input-column{
+	height: 100%;
+	width: 100%;
+	background: #461B7B;
+	margin-right: 5px;
+	border-radius: 10px;	
+	text-align: center;     
+}
+
+.carousel-control{
+	width:300px;
+	height:60px;  
+	float: left;
+	border: 2px solid #666666;
+	background-color: #ccc;
+	margin-right: 5px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px #000;
+	-ms-box-shadow: inset 0 0 3px #000;
+	box-shadow: inset 0 0 3px #000;
+	text-align: center;  
+	padding-top: 25px;
+	padding-left: 25px;
+}
+
+.equivalentColumn{
+	width:110%;
+	height:100%;
+	/*overflow-y: scroll;*/
+}
+
+.equivalent-column{
+	height: 525px;
+	width: 100%;
+	float: left;
+	border: 2px solid #666666;
+	
+	border-radius: 10px;
+	
+	text-align: center;  
+	padding-top: 25px;
+	/*padding-left: 25px;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.nopaddings{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
