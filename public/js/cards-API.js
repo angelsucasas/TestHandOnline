@@ -1,6 +1,7 @@
 
 const comboData = document.getElementById("pruebita");
 const specialNextBtn = $('.nextBtnSpecial');
+const IMAGE_URL = "https://images.ygoprodeck.com/images/cards/"
 var table = document.getElementById('mytable'); 
 
 let combos = []
@@ -112,7 +113,7 @@ function printCardDragables(deck,DeckDiv){
   [].forEach.call(deck, function (Card) {
     let cardImage = document.createElement('img');
     cardImage.setAttribute('draggable', true);  
-    cardImage.src =`https://images.ygoprodeck.com/images/cards/${Card}.jpg`;
+    cardImage.src =`${IMAGE_URL}${Card}.jpg`;
     cardImage.id = Card;
     addClass(cardImage,"#card card"); 
     DeckDiv.appendChild(cardImage);
@@ -123,7 +124,7 @@ function printCardNotDragables(deck,DeckDiv){
   [].forEach.call(deck, function (Card) {
     let cardImage = document.createElement('img');
     cardImage.setAttribute('draggable', false);       
-    cardImage.src =`https://images.ygoprodeck.com/images/cards/${Card}.jpg`;
+    cardImage.src =`${IMAGE_URL}${Card}.jpg`;
     cardImage.id = Card;
     addClass(cardImage,"#card card"); 
     DeckDiv.appendChild(cardImage);

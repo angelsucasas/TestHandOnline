@@ -89,32 +89,15 @@ function handleDragEndOncolumn(e) {
   });
 }
 
-var cols = document.querySelectorAll('.column');
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false)
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
+// Centraliza el enlace de eventos
+function bindDragEvents(element) {
+  element.addEventListener('dragstart', handleDragStart, false);
+  element.addEventListener('dragenter', handleDragEnter, false);
+  element.addEventListener('dragover', handleDragOver, false);
+  element.addEventListener('dragleave', handleDragLeave, false);
+  element.addEventListener('drop', handleDrop, false);
+  element.addEventListener('dragend', handleDragEnd, false);
+}
 
-var cards = document.querySelectorAll('.card');
-[].forEach.call(cards, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false)
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
-
-var cards = document.querySelectorAll('.big-column');
-[].forEach.call(cards, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false)
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
+// Inicializa todos los elementos existentes en el DOM al cargar la página
+document.querySelectorAll('.column, .card, .big-column').forEach(bindDragEvents);
