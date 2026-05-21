@@ -11,7 +11,7 @@ $ git clone
 ```
 or via zip.
 
-then just open the welcome.html file, and you are ready to go.
+then just open the index.html file, and you are ready to go.
 
 ## How to use it?
 
@@ -21,7 +21,7 @@ there are 3 steps to get the results.
 
 ### What is a .YDK file?
 
-its a file generated only by : Dueling Book, dueling Nexus and YgoPro. It contains all the info of your cards in the main, side and extra deck. 
+its a file generated only by : Dueling Book, dueling Nexus, YgoPro and YGO Omega. It contains all the info of your cards in the main, side and extra deck. 
 it is use here to make more easy the process of getting all the information of your cards.
 
 ## step 2: select the cards that take part of the combo you want to register.
@@ -53,7 +53,7 @@ and there you go, you can go back in steps and add cards to the combo , or more 
 
 You can se the page running here:
 
-https://testhandonline.000webhostapp.com/
+https://testhand.netlify.app/
 
 ## BETA 1.0
 
