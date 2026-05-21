@@ -1,13 +1,413 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>testhandonline</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./public/testhandLogoFinal.png" />
+  <title>TestHand Online</title>
+  
+  <meta name="csrf-token" content="">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+  
+  <link rel="stylesheet" href="./public/css/buttons.css" />
+  <link rel="stylesheet" href="./public/css/steps.css" />
+  <link rel="stylesheet" href="./public/css/dragAndDrop.css"/>
+  <link rel="stylesheet" href="./public/css/columns.css" />
+  <link rel="stylesheet" href="./public/css/heights.css" />
+  <link rel="stylesheet" href="./public/css/paralelogram.css" />
+  <link rel="stylesheet" href="./public/css/main.css" />
+
+  <script src="./public/js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid second-step nopaddings full-viewport-height" id="heighControl">
+    
+    <nav class="navbar navbar-default custom-navbar">
+      <div class="container-fluid full-height">
+        <div class="row full-height">
+          
+          <div class="col-xs-2 text-center nopaddings full-height">
+            <div class="stepwizard full-height">
+              <div class="stepwizard-row setup-panel" style="height: 100%;">
+                <div class="stepwizard-step full-height">
+                  <a href="#step-1" id="firstStep">
+                    <img src="./public/testhandLogo.png" class="nav-logo-img" alt="Logo">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-4 text-center nopaddings full-height">
+            <div class="row nopaddings navbar-nav-links">
+              <div class="col-xs-4 nopaddings">
+                <div class="stepwizard full-height">
+                  <div class="stepwizard-row setup-panel" style="height: 100%;">
+                    <div class="stepwizard-step full-height">
+                      <a href="#step-1" class="nav-home-link">Home</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-4 nopaddings">Tutorial</div>
+              <div class="col-xs-4 nopaddings">Contact us</div>
+            </div>
+          </div>
+
+          <div class="col-xs-6" style="height: 100%;">
+            <div class="nav-wizard-container stepwizard">
+              <div class="stepwizard-row setup-panel full-width">
+                <div class="stepwizard-step">
+                  <a href="#step-1" class="btn btn-primary" id="firstStep">Paso 1</a>
+                </div>
+                <div class="stepwizard-step">
+                  <a href="#step-2" class="btn btn-default" disabled="disabled" id="SecondStep">Paso 2</a>
+                </div>
+                <div class="stepwizard-step">
+                  <a href="#step-3" class="btn btn-default" disabled="disabled" id="ThirdStep">Paso 3</a>
+                </div>
+                <div class="stepwizard-step">
+                  <a href="#step-4" class="btn btn-default" disabled="disabled" id="FourthStep">Paso 4</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <button class="sideElementToScreen hideElement side-btn-main" id="changeToMainDeck">
+      <p class="verticalWrite">Main</p>
+    </button>
+    <button class="sideElementToScreen hideElement side-btn-extra" id="changeToExtraDeck">
+      <p class="verticalWrite">Extra</p>
+    </button>
+    <button class="sideElementToScreen hideElement side-btn-side" id="changeToSideDeck">
+      <p class="verticalWrite">Side</p>
+    </button>    
+
+    <div id="mainContainer" class="container-fluid nopaddings">
+
+      <div class="setup-content nopaddings" id="step-1">
+        <div class="col-sm-4 col-xs-12 nopaddings full-height">
+          <div class="container-fluid animate__animated animate__fadeInLeft animate__slower full-height" id="logo">
+            <img src="./public/testhandLogo.png" class="logoSize p1-logo-img" alt="Logo de Entrada">
+          </div>
+        </div>
+
+        <div class="col-sm-8 col-xs-12 full-height">
+          <div class="container-fluid">
+            <h1 class="text-center p1-title">
+              ¡Consistencia en 3 simples pasos!
+            </h1>
+            <h3 class="p1-subtitle">
+              Sube el archivo .ydk de tu mazo para comenzar:
+            </h3>
+
+            <div class="row p1-form-row">
+              <!--form enctype="multipart/form-data" id="testForm"-->
+                <div class="col-sm-6 col-xs-12 p1-input-wrapper">
+                  <input id="input" name="deck" type="file" class="input-column p1-file-input">     
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                  <button onclick="startStep2()" class="btn btn-primary nextBtn btn-lg p1-submit-btn">
+                    Comenzar
+                  </button>                      
+                </div>
+              <!--/form-->
+            </div>                
+
+            <div class="p1-test-mode-wrapper">
+              <h3 id="TestModeText" class="p1-test-mode-text">¡No tienes archivo .ydk? ¡activa el modo prueba!</h3>
+              <div class="text-center p1-test-mode-btn-container">
+                <button type="button" id="activarModoPrueba" class="btn btn-lg p1-test-mode-btn nextBtn">
+                  Activar modo prueba
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>      
+
+      <div class="row setup-content animate__animated animate__fadeInLeft p2-container" id="step-2">
+        <div class="text-center p2-header">
+          <h3 class="text-white">Paso 2: Agrega las cartas que quieres ver!</h3>
+        </div>          
+        
+        <div class="row">
+          <div class="col-xs-1"></div>
+          
+          <div class="col-sm-6 col-xs-4">
+            <div id="mainDeckDiv" class="big-column"></div>
+          </div>
+
+          <div class="col-sm-2 col-xs-3">
+            <div class="row nopaddings style="margin-bottom: 10px;">
+              <div class="col-xs-3 nopaddings">
+                <a href="#carousel-example-generic" role="button" data-slide="prev" class="btn btn-default btn-block p2-carousel-control-btn">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>                  
+              </div>
+              <div class="col-xs-6 nopaddings">
+                <button id="addCombo" class="btn btn-block p2-action-btn">
+                  Combo <i class="glyphicon glyphicon-plus"></i>
+                </button>
+              </div>
+              <div class="col-xs-3 nopaddings">
+                <a href="#carousel-example-generic" role="button" data-slide="next" class="btn btn-default btn-block p2-carousel-control-btn">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+              </div>               
+            </div>
+
+            <div class="column">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div id="comboCarrousel" class="carousel-inner" role="listbox">
+                  
+                  <div class="item active combo">
+                    <div class="column comboBox">
+                      <div class="delete-ajust text-right">                                       
+                        <button type="button" class="btn btn-circle-delete btn-xl">
+                          <i class="trash-icon-ajust glyphicon glyphicon-trash"></i>
+                        </button>  
+                      </div>
+                      <div class="special-col">
+                        <div id="comboCards" class="item"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="column comboBox">
+                      <div class="delete-ajust text-right">
+                        <button type="button" class="btn btn-circle-delete btn-xl">
+                          <i class="trash-icon-ajust glyphicon glyphicon-trash"></i>
+                        </button>  
+                      </div>
+                      <div class="special-col">
+                        <div id="comboCardsSecondary" class="item"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>                           
+              </div>
+            </div>
+          </div>            
+
+          <div class="col-sm-2 col-xs-3">
+            <div class="row nopaddings style="margin-bottom: 10px;">
+              <div class="col-xs-3 nopaddings">
+                <a href="#brick-carousel" role="button" data-slide="prev" class="btn btn-default btn-block p2-carousel-control-btn">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                </a>                  
+              </div>
+              <div class="col-xs-6 nopaddings">
+                <button id="addBrick" class="btn btn-block p2-action-btn">
+                  Brick <i class="glyphicon glyphicon-plus"></i>
+                </button>
+              </div>
+              <div class="col-xs-3 nopaddings">
+                <a href="#brick-carousel" role="button" data-slide="next" class="btn btn-default btn-block p2-carousel-control-btn">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a>
+              </div>                
+            </div>
+
+            <div class="column">
+              <div id="brick-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div id="comboBrick" class="carousel-inner" role="listbox">
+                  
+                  <div class="item active">
+                    <div class="column brickBox">
+                      <div class="delete-ajust text-right">
+                        Brick 
+                        <button type="button" class="btn btn-circle-delete btn-xl">
+                          <i class="trash-icon-ajust glyphicon glyphicon-trash"></i>
+                        </button>  
+                      </div>
+                      <div class="special-col">
+                        <div id="brickCards" class="item"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="column brickBox">
+                      <div class="delete-ajust text-right">
+                        Brick 
+                        <button type="button" class="btn btn-circle-delete btn-xl">
+                          <i class="trash-icon-ajust glyphicon glyphicon-trash"></i>
+                        </button>  
+                      </div>
+                      <div class="special-col">
+                        <div id="brickCardsSecondary" class="item"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row p2-iterations-row">
+          <div class="col-sm-8 col-xs-12 text-center">                  
+            <label class="text-white style="font-size: 1.6em; margin-right: 10px;">¿Cuántas pruebas quiere?:</label>                  
+            <select name="iterations" id="iterations" class="form-control p2-select-iterations">
+              <option value="1000">1000</option>
+              <option value="10000">10000</option>
+              <option value="100000">100000</option>
+              <option value="1000000">1000000</option>
+            </select>
+          </div>
+          <div class="col-sm-4 col-xs-12 text-center">
+            <button class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg btn-purple-next" type="button">
+              Siguiente Paso
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row setup-content animate__animated animate__fadeInLeft p3-container" id="step-3">
+        
+        <button class="sideElementToScreen side-btn-main-p3" id="changeToMainDeck2">
+          <p class="verticalWrite">Main</p>
+        </button>
+        <button class="sideElementToScreen side-btn-extra-p3" id="changeToExtraDeck2">
+          <p class="verticalWrite">Extra</p>
+        </button>
+        <button class="sideElementToScreen side-btn-side-p3" id="changeToSideDeck2">
+          <p class="verticalWrite">Side</p>
+        </button>
+
+        <h3 class="text-center class="text-white"">Paso 3: Agrega las equivalencias</h3>
+        
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-sm-5 col-xs-5">
+            <div id="mainDeckDiv2" class="big-column"></div>
+          </div>            
+          
+          <div class="col-sm-6 col-xs-6">
+            <div class="table-responsive equivalent-column p3-table-responsive">
+              <table class="table table-bordered">
+                <tbody id="equivalentTable">
+                  <tr>
+                    <td>
+                      <div class="row">
+                        <div class="col-sm-4 col-xs-5 nopaddings">
+                          <div class="row nopaddings">
+                            <div class="col-xs-8 nopaddings">
+                              <div class="litle-parallelogram">
+                                <div class="column equivalentColumn normalDegree">
+                                  <div id="comboEquivalentFather" class="item active"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 nopaddings">
+                              <hr class="equivalentMark">
+                              <hr class="equivalentMark">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-8 col-xs-7 nopaddings">
+                          <div class="parallelogram">
+                            <div class="column equivalentColumn normalDegree">
+                              <div id="comboEquivalentChild" class="item active"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr id="addANewEquivalentBoxTr">
+                    <td class="text-center">
+                      <button type="button" id="addANewEquivalentBox" class="btn btn-xl p3-add-btn">
+                        <i class="glyphicon glyphicon-plus"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>                               
+          </div>
+        </div>
+
+        <div class="text-center p3-next-btn-container">
+          <button id="pruebita" class="go-up nextBtn btn btn-primary nextBtnSpecial btn-lg btn-purple-next" type="button">
+            Siguiente Paso
+          </button>
+        </div>
+      </div>
+
+      <div class="row setup-content animate__animated animate__fadeInLeft" id="step-4">
+        <h3 class="text-center class="text-white"">Paso 4: Resultado de las pruebas</h3>
+        
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <div class="table-responsive result-column p4-table-bg">
+              <table class="table table-bordered">
+                <tbody id="mytable" class="text-black"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row p4-subtables-row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-5">
+            <div class="table-responsive result-column p4-scrollable-table-container">
+              <table class="table table-bordered">
+                <tbody id="combosImagesIndividualResult" class="text-black"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-xs-5">
+            <div class="table-responsive result-column p4-scrollable-table-container">
+              <table class="table table-bordered">
+                <tbody id="brickImagesIndividualResult" class="text-black"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row p4-subtables-row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <div class="table-responsive result-column p4-scrollable-table-container-fluid">
+              <table class="table table-bordered">
+                <tbody id="hipergeometricDistributionResult" class="text-black"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./public/js/DragDropTouch.js"></script>
+  <script src="./public/js/Card.js"></script>
+  <script src="./public/js/steps.js"></script>
+  <script src="./public/js/dragAndDrop.js"></script>
+  <script src="./public/js/dinamic-boxes.js"></script>
+  <script src="./public/js/cards-API.js"></script>
+  <script src="./public/js/class-manager.js"></script>
+  <script src="./public/js/file-management.js"></script>
+  <script src="./public/js/array-functions.js"></script>
+  <script src="./public/js/analitics-functions.js"></script>
+  <script src="./public/js/changeDeckDinamicly.js"></script>
+  <script src="./public/js/equivalent.js"></script>
+
+</body>
 </html>
